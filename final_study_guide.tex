@@ -74,25 +74,29 @@
 
 \section{Special Relativity}
 
-\subsection{Key Concepts}
-
+\subsection{Postulates of Special Relativity}
 \conceptbox{
-\textbf{Postulates:} 
+\textbf{Postulates:}
 \begin{itemize}
-    \item Laws of physics are the same in all inertial frames.
+    \item The laws of physics are the same in all inertial frames.
     \item The speed of light is constant in a vacuum for all observers, regardless of their motion relative to the source.
 \end{itemize}
 }
 
+\subsection{Relativity of Simultaneity}
 \conceptbox{
-\textbf{Relativity of Simultaneity:} 
-Two events that appear simultaneous to one observer may not appear simultaneous to another observer moving relative to the first.
+\textbf{Relativity of Simultaneity:}
+Two events that appear simultaneous to one observer may not appear simultaneous to another observer moving relative to the first. This is a direct consequence of the constancy of the speed of light and the Lorentz transformations.
 }
+
+\subsection{Lorentz Transformations}
 
 \conceptbox{
 \textbf{Lorentz Transformations:}
-The Lorentz transformations relate the spacetime coordinates of an event as measured in two inertial reference frames moving at a constant velocity relative to each other. These transformations preserve the invariant interval (\( \Delta s^2 \)).
+The Lorentz transformations relate spacetime coordinates of an event in two inertial reference frames moving at a constant velocity relative to each other. These transformations preserve the invariant interval (\( \Delta s^2 \)), a cornerstone of special relativity.
+}
 
+\conceptbox{
 \textbf{Transformations:}
 \begin{itemize}
     \item For a frame \( S' \) moving with velocity \( v \) along the \( x \)-axis relative to \( S \):
@@ -101,15 +105,20 @@ The Lorentz transformations relate the spacetime coordinates of an event as meas
         \item Space (\( x \)-direction): \( x' = \gamma \left( x - vt \right) \)
         \item Space (\( y \)- and \( z \)-directions): \( y' = y, \quad z' = z \)
     \end{itemize}
-    \item \( \gamma = \frac{1}{\sqrt{1 - v^2/c^2}} \) is the Lorentz factor.
+    \item The Lorentz factor is \( \gamma = \frac{1}{\sqrt{1 - v^2/c^2}} \).
 \end{itemize}
+}
 
+\conceptbox{
 \textbf{Lorentz Transformation Matrix:}
 The Lorentz transformation can be expressed using matrix multiplication:
+\eqbox{
 \[
 x' = \Lambda x,
 \]
-where \( \Lambda \) is the Lorentz transformation matrix. For a boost along the \( x \)-axis, \( \Lambda \) is:
+}
+where \( x = \begin{bmatrix} ct \\ x \\ y \\ z \end{bmatrix} \) and \( x' \) are the spacetime coordinates in \( S \) and \( S' \), respectively. For a boost along the \( x \)-axis, the Lorentz transformation matrix \( \Lambda \) is:
+\eqbox{
 \[
 \Lambda =
 \begin{bmatrix}
@@ -119,12 +128,15 @@ where \( \Lambda \) is the Lorentz transformation matrix. For a boost along the 
 0 & 0 & 0 & 1
 \end{bmatrix},
 \]
-with \( \beta = v/c \).
+}
+where \( \beta = v/c \).
+}
 
+\conceptbox{
 \textbf{Key Properties:}
 \begin{itemize}
-    \item The determinant of \( \Lambda \) is \( +1 \), ensuring the transformations preserve spacetime orientation.
-    \item The inverse transformation is obtained by negating \( v \), which flips the sign of \( \beta \):
+    \item The inverse transformation is obtained by negating \( v \), flipping the sign of \( \beta \):
+    \eqbox{
     \[
     \Lambda^{-1} = \begin{bmatrix}
     \gamma & \gamma \beta & 0 & 0 \\
@@ -133,351 +145,451 @@ with \( \beta = v/c \).
     0 & 0 & 0 & 1
     \end{bmatrix}.
     \]
+    }
     \item The Lorentz transformations preserve the invariant interval:
+    \eqbox{
     \[
     \Delta s^2 = x \cdot x = x'\cdot x'.
     \]
+    }
 \end{itemize}
+}
 
+\conceptbox{
 \textbf{Applications:}
 \begin{itemize}
-    \item Lorentz transformations explain time dilation, length contraction, and the relativity of simultaneity.
-    \item They are fundamental in deriving the transformations for four-vectors such as four-momentum and four-velocity.
+    \item Lorentz transformations explain phenomena like time dilation, length contraction, and the relativity of simultaneity.
+    \item They form the basis for defining and transforming four-vectors, such as four-momentum and four-velocity.
 \end{itemize}
 }
 
 
+\subsection{The Relativistic Invariant Interval}
 \conceptbox{
-\textbf{Relativistic Velocity Addition:} 
-These problems typically involve three objects:
+\textbf{Invariant Interval:}
+The relativistic invariant interval is a spacetime quantity that remains unchanged under Lorentz transformations.
+}
+\eqbox{
+\textbf{Invariant Interval:}
+\[
+\Delta s^2 = (c\Delta t)^2 - (\Delta x)^2 - (\Delta y)^2 - (\Delta z)^2
+\]}
+\conceptbox{
+\textbf{Classifications of the Invariant Interval:}
 \begin{itemize}
-    \item $S$: Stationary reference frame.
-    \item $S'$: Reference frame of the second moving object.
-    \item $u$: Velocity of the first object relative to the stationary frame.
-    \item $v$: Velocity of the second object relative to the stationary frame.
-    \item $u'$: Velocity of the first object relative to the second moving object.
+    \item \textbf{Time-like:} \( \Delta s^2 > 0 \), related to proper time:
+    \[
+    \Delta s^2 = c^2 \Delta \tau^2
+    \]
+    \item \textbf{Space-like:} \( \Delta s^2 < 0 \), related to proper length:
+    \[
+    -\Delta s^2 = L^2
+    \]
+    \item \textbf{Light-like:} \( \Delta s^2 = 0 \), events are connected by light:
+    \[
+    c^2\Delta t^2 = (\Delta x)^2 + (\Delta y)^2 + (\Delta z)^2
+    \]
 \end{itemize}
 }
 
+\subsection{Relativistic Velocity Addition}
 \conceptbox{
-\textbf{The Relativistic Invariant Interval:} 
-A spacetime quantity that remains unchanged under Lorentz transformations.
-
+\textbf{Relativistic Velocity Addition:}
+When combining velocities in different inertial frames, the relativistic formula must be used. Typically, these problems involve 3 objects and the following reference frames and velocities are defined:
 \begin{itemize}
-    \item \textbf{Properties:}
+    \item \( S \): The stationary reference frame.
+    \item \( S' \): The moving reference frame.
+    \item \( u \): The velocity of an object relative to \( S \).
+    \item \( v \): The velocity of \( S' \) relative to \( S \).
+    \item \( u' \): The velocity of the object relative to \( S' \).
+\end{itemize}
+}
+\eqbox{
+\textbf{Relativistic Velocity Addition Formula:}
+\[
+u' = \frac{u + v}{1 + \frac{uv}{c^2}}
+\]
+Here, \( u' \) is the velocity of the object as measured in \( S' \), given the velocity \( u \) of the object relative to \( S \) and the velocity \( v \) of \( S' \) relative to \( S \).
+}
+
+
+\subsection{Four-Vectors in Special Relativity}
+\conceptbox{
+\textbf{Four-Vectors:}
+Physical quantities in relativity are represented as four-vectors that transform under Lorentz transformations.
+}
+\eqbox{
+\textbf{General Form of a Four-Vector:}
+\[
+a^\mu = (a^0, \vec{a}) = (a^0, a^1, a^2, a^3), \quad a^0 = c\Delta t
+\]
+}
+\conceptbox{
+\textbf{Dot Product of Four-Vectors:}
+The invariant dot product between two four-vectors \( a^\mu \) and \( b^\mu \) is:
+\eqbox{
+\[
+a \cdot b = a^0 b^0 - \vec{a} \cdot \vec{b}
+\]
+}
+This quantity is Lorentz invariant (unchanged under Lorentz transformations).
+}
+
+\subsection{Examples of Four-Vectors}
+\conceptbox{
+\textbf{Common Four-Vectors:}
+\begin{itemize}
+    \item \textbf{Four-Position:} 
+    \eqbox{
+    \[
+    x^\mu = (ct, x, y, z)
+    \]
+    }
+    \item \textbf{Four-Velocity:} 
+    \eqbox{
+    \[
+    u^\mu = \frac{dx^\mu}{d\tau} = \gamma (c, \vec{v}), \quad \gamma = \frac{1}{\sqrt{1 - v^2/c^2}}
+    \]
+    }
+    \item \textbf{Four-Momentum:} 
+    \eqbox{
+    \[
+    p^\mu = m u^\mu = \gamma m (c, \vec{v})
+    \]
+    }
+    \eqbox{
+    For massless particles, like photons:
+    \[
+    p \cdot p = 0, \quad E = |\vec{p}|c
+    \]
+    }
+\end{itemize}
+}
+
+\subsection{Relativistic Conservation Laws}
+
+\conceptbox{
+\textbf{Relativistic Conservation Laws:}
+The principles of conservation of energy and momentum extend to special relativity, incorporating the total energy (rest energy + kinetic energy) and relativistic momentum.
+}
+
+\conceptbox{
+    \textbf{Relativistic Total Energy:}
     \begin{itemize}
-        \item Negative spatial components distinguish it from a Euclidean interval.
-        \item It can be positive, negative, or zero:
+        \item The total energy \( E \) includes both the rest energy and the relativistic kinetic energy:
+        \eqbox{
+        \[
+        E = \gamma m_0 c^2.
+        \]
+        }
+        \item The rest energy is given by \( E_0 = m_0 c^2 \), where \( m_0 \) is the rest mass.
+        \item In any physical process, the total energy is conserved.
+    \end{itemize}
+}
+\conceptbox{
+    \textbf{Relativistic Momentum:}
+    \begin{itemize}
+        \item The relativistic momentum is defined as:
+        \eqbox{
+        \[
+        \vec{p} = \gamma m_0 \vec{v},
+        \]
+        }
+        where \( \gamma = \frac{1}{\sqrt{1 - v^2/c^2}} \).
+        \item Both the magnitude and direction of total momentum in an isolated system are conserved.
+    \end{itemize}
+}
+
+\conceptbox{
+    \textbf{Four-Momentum Conservation:}
+    \begin{itemize}
+        \item Energy and momentum form components of the four-momentum vector:
+        \eqbox{
+        \[
+        p^\mu = \left( \frac{E}{c}, \vec{p} \right).
+        \]
+        }
+        \item In all inertial frames, the conservation of four-momentum holds:
+        \eqbox{
+        \[
+        \sum p^\mu_{\text{initial}} = \sum p^\mu_{\text{final}}.
+        \]
+    }
+    \end{itemize}
+}
+
+\conceptbox{
+    \textbf{Relativistic Collisions:}
+    \begin{itemize}
+        \item Total energy and total momentum are conserved in collisions, including elastic and inelastic cases.
+        \item Unlike classical mechanics, the concept of conserved "mass" is not generally applicable. For example:
         \begin{itemize}
-            \item \textbf{Time-like ($\Delta s^2 > 0$):} Events can be connected by a physical particle moving slower than the speed of light.
-            \item \textbf{Space-like ($\Delta s^2 < 0$):} Events are separated by more distance than time; no signal can connect them.
-            \item \textbf{Light-like ($\Delta s^2 = 0$):} Events are connected by a light signal.
+            \item In pair annihilation, rest mass converts to energy.
+            \item In particle creation, energy converts into rest mass.
         \end{itemize}
     \end{itemize}
-    \item \textbf{Relationship to Proper Time and Proper Length:}
-    \begin{itemize}
-        \item \textbf{Proper Time ($\Delta \tau$):} In the frame where the particle is stationary, the interval relates to proper time.
-        \item \textbf{Proper Length ($\Delta L$):} In the frame where events are simultaneous, the interval relates to proper length.
-    \end{itemize}
-\end{itemize}
 }
 
-\conceptbox{
-\textbf{Four-Vectors:} A four-vector in special relativity is a quantity defined in four-dimensional spacetime that transforms under Lorentz transformations. It has the general form:
+\eqbox{
+\textbf{Energy-Momentum Relation:}
 \[
-a = (a^0, \vec{a}),
+E^2 = (pc)^2 + (m_0c^2)^2
 \]
-where \( a^0 \) is the time component ($c\Delta t$), and \( \vec{a} = (a^1, a^2, a^3) \) is the spatial 3-vector component.
-
-
-\textbf{Key Properties:}
-\begin{itemize}
-    \item The \textbf{invariant dot product} of two four-vectors \( a \) and \( b \) is:
-    \[
-    a \cdot b = a^0 b^0 - \vec{a} \cdot \vec{b}.
-    \]
-    This quantity is Lorentz invariant (unchanged under Lorentz transformations).
-    \item The invariant magnitude of a four-vector is a special case of the dot product:
-    \[
-    a \cdot a = (a^0)^2 - |\vec{a}|^2.
-    \]
-    \item The magnitude classifies four-vectors as:
-    \begin{itemize}
-        \item \textbf{Time-like:} \( a \cdot a > 0 \) then $ \Delta s^2 = c^2\tau^2$.
-        \item \textbf{Space-like:} \( a \cdot a < 0 \) then $ -\Delta s^2 = L $.
-        \item \textbf{Light-like:} \( a \cdot a = 0 \) then $ \Delta s^2 = 0 $.
-    \end{itemize}
-\end{itemize}
-
-\textbf{Common Examples:}
-\begin{itemize}
-    \item \textbf{Four-Position:} \( x = (ct, \vec{x}) \), where \( ct \) represents the time component and \( \vec{x} = (x, y, z) \) is the spatial position.
-    \item \textbf{Four-Velocity:} \( u = \displaystyle\frac{dx}{d\tau} = \gamma (c, \vec{v}) \), where \( \gamma = \frac{1}{\sqrt{1 - v^2/c^2}} \), \( c \) is the speed of light, and \( \vec{v} \) is the 3-velocity.
-    \item \textbf{Four-Momentum:} \( p = mu = \gamma m (c, \vec{v}) = \left( \frac{E}{c}, \vec{p} \right) \), where \( E \) is the total energy and \( \vec{p} \) is the 3-momentum.
-\end{itemize}
-
-\textbf{Applications of the Invariant Dot Product:}
-\begin{itemize}
-    \item \textbf{Four-Velocity:} The invariant magnitude of \( u \) is always positive and equal to \( c^2 \):
-    \[
-    u \cdot u = c^2.
-    \]
-    \item \textbf{Four-Momentum:} The invariant magnitude of \( p \) relates to the particle's rest mass \( m \):
-    \[
-    p \cdot p = m^2 c^2.
-    \]
-    For massless particles, like photons, \( p \cdot p = 0 \) and \( E = |\vec{p}|c \).
-\end{itemize}
+This relation connects the total energy \( E \), the momentum \( p \), and the rest mass \( m_0 \) of a particle.
 }
 
+\eqbox{
+\textbf{Invariant Four-Momentum Magnitude:}
+\[
+p^\mu \cdot p^\mu = m_0^2 c^2
+\]
+This invariant magnitude holds in all inertial frames, ensuring the consistency of relativistic conservation laws.
+}
+\newpage
+\section{Quantum Mechanics}
 
+\subsection{Quantum Theory of Light}
+
+\subsubsection{Blackbody Radiation and Planck Hypothesis}
+\conceptbox{
+\textbf{Blackbody Radiation:} 
+Classical physics predicted the "ultraviolet catastrophe," where energy radiated at high frequencies diverged. Planck resolved this by quantizing energy:
+\eqbox{
+\[
+E = nhf, \quad n = 1, 2, 3, \dots
+\]}
+\textbf{Planck's Law:}
+\eqbox{
+\[
+I(\nu, T) = \frac{8\pi h\nu^3}{c^3}\frac{1}{e^{h\nu/k_BT} - 1},
+\]
+}
+where \( I(\nu, T) \) is the intensity of radiation at frequency \( \nu \).
+}
+
+\subsubsection{Photoelectric Effect}
+\conceptbox{
+\textbf{Photoelectric Effect:}
+Electrons are emitted from a material when light shines on it, with the energy of the electrons depending on the frequency of light.
+\eqbox{
+\[
+hf = \phi + KE_{max}, \quad hf_c = \phi, \quad KE_{max} = eV_s
+\]}
+\textbf{Threshold Frequency:} No electrons are emitted if \( f < f_c \).
+}
+
+\subsubsection{Compton Scattering}
+\conceptbox{
+\textbf{Compton Scattering:}
+The scattering of X-rays by electrons demonstrates particle-like behavior of light. The wavelength shift is given by:
+\eqbox{
+\[
+\lambda' - \lambda = \frac{h}{m_ec}(1 - \cos\theta).
+\]}
+\textbf{Energy Relation:}
+\eqbox{
+\[
+\frac{1}{E'} - \frac{1}{E} = \frac{1 - \cos\theta}{m_ec^2}.
+\]
+}
+}
+\newpage
+\subsubsection{Wave-Particle Duality}
 
 \conceptbox{
-\textbf{Relativistic Conservation Laws:} 
-The principles of conservation of energy and momentum extend to special relativity with some key differences from classical mechanics. 
-
-\begin{itemize}
-    \item \textbf{Relativistic Total Energy:} 
-    \begin{itemize}
-        \item Total energy includes kinetic energy and rest energy: \( E = \gamma m_0 c^2 \), where \( \gamma = \frac{1}{\sqrt{1 - v^2/c^2}} \).
-        \item Rest energy (\( m_0 c^2 \)) accounts for the energy associated with the rest mass of a particle.
-        \item Total energy is conserved in all relativistic processes, including collisions.
-    \end{itemize}
-
-    \item \textbf{Relativistic Momentum:} 
-    \begin{itemize}
-        \item Momentum in special relativity is defined as \( \vec{p} = \gamma m_0 \vec{v} \).
-        \item The magnitude and direction of the total momentum in an isolated system are conserved.
-    \end{itemize}
-
-    \item \textbf{Relativistic Collisions:} 
-    \begin{itemize}
-        \item Unlike classical mechanics, all forms of energy (including rest energy) contribute to the total energy of the system.
-        \item The distinction between elastic and inelastic collisions in classical mechanics is less useful in relativity. Instead, we track the conservation of total energy and momentum.
-        \item Mass is not generally conserved in relativistic collisions. For example, mass can be converted into energy (e.g., pair annihilation) or vice versa (e.g., particle creation).
-    \end{itemize}
-
-    \item \textbf{Implications:} 
-    \begin{itemize}
-        \item Energy and momentum form components of the four-momentum vector: \( p^\mu = \left( \frac{E}{c}, \vec{p} \right) \).
-        \item Conservation laws apply to the four-momentum vector in all inertial frames:
-        \[
-        \sum p^\mu_{\text{initial}} = \sum p^\mu_{\text{final}}
-        \]
-        \item These conservation laws ensure the invariance of physical processes across reference frames.
-    \end{itemize}
-\end{itemize}
+\textbf{Wave-Particle Duality:}
+Light and matter exhibit dual behavior, displaying characteristics of both waves and particles depending on the experimental conditions.
 }
-
-\subsection{Essential Equations}
-\eqbox{
-\textbf{Time Dilation:} $\Delta t = \gamma \Delta t_0$, where $\gamma = \frac{1}{\sqrt{1 - v^2/c^2}}$.
-}
-
-\eqbox{
-\textbf{Length Contraction:} $L = L_0 \gamma^{-1} = L_0 \sqrt{1 - v^2/c^2}$.
-}
-
-\eqbox{
-\textbf{Relativistic Addition of Velocities:} $u' = \displaystyle\frac{u + v}{1 + uv/c^2}$.
-}
-
-\eqbox{
-\textbf{Lorentz Transformations:}
-\begin{itemize}
-    \item \textbf{Time:} $t' = \gamma(t - \frac{vx}{c^2})$.
-    \item \textbf{Space:} $x' = \gamma(x - vt)$.
-\end{itemize}
-}
-
-\eqbox{
-\textbf{Relativistic Dynamics:}
-\begin{itemize}
-    \item \textbf{Kinetic Energy:} $KE = (\gamma - 1)m_0c^2$.
-    \item \textbf{Total Energy:} $E = \gamma m_0c^2$.
-    \item \textbf{Rest Mass: } $E = m_0c^2$
-\end{itemize}
-}
-
-\eqbox{
-\textbf{Energy-Momentum Relation:} $E^2 = (pc)^2 + (m_0c^2)^2$.
-}
-
-\eqbox{
-\textbf{Four-Position:}
-\begin{itemize}
-    \item Defined as $x = (c\Delta t, x, y, z)$, where $x$ is the spacetime coordinate.
-    \item Invariant interval: $\Delta s^2 = (c \Delta t)^2 - \Delta x^2 -  \Delta y^2 - \Delta z^2$.
-\end{itemize}
-}
-
-\eqbox{
-\textbf{Four-Velocity:}
-\begin{itemize}
-    \item Defined as $u^\mu = \frac{dx^\mu}{d\tau}$, where $\tau$ is proper time.
-    \item Invariant dot product: $u^\mu u_\mu = c^2$.
-\end{itemize}
-}
-
-\eqbox{
-\textbf{Four-Momentum:}
-\begin{itemize}
-    \item Defined as $p = m_0 u$, where $m_0$ is the rest mass.
-    \item Invariant: $p \cdot p = m_0^2c^2$.
-\end{itemize}
-}
-\section{Early Quantum Theory and Quantum Mechanics}
 \conceptbox{
-\textbf{Quantum Theory of Light:}
+\textbf{Key Features:}
 \begin{itemize}
-    \item \textbf{Blackbody Problem and Ultraviolet Catastrophe:}
-    Classical physics predicted infinite energy at short wavelengths (ultraviolet catastrophe). Planck resolved this by introducing quantized energy levels \( E = nhf \), leading to Planck's radiation law.
-    
-    \item \textbf{Photoelectric Effect:}
-    Light behaves as particles (photons). The energy of emitted electrons depends on the frequency, not intensity, of the incident light:
-    \[
-    E = hf - \phi,
-    \]
-    where \( \phi \) is the work function.
+    \item Travels as a wave, interacting with itself, and demonstrates phenomena such as interference and diffraction.
+    \item Interacts as a particle, transferring discrete packets of energy, known as photons or quanta.
+    \item Confirmed by experiments:
+    \begin{itemize}
+        \item \textbf{Double-Slit Experiment:} Demonstrates interference patterns for light and electrons, showing wave-like behavior.
+        \item \textbf{Photoelectric Effect:} Demonstrates the particle nature of light, as photons eject electrons from a material.
+        \item \textbf{Blackbody Radiation:} Explained by Planck's quantization hypothesis, resolving the ultraviolet catastrophe.
+        \item \textbf{Compton Scattering:} Demonstrates photon momentum through scattering with electrons.
+    \end{itemize}
+\end{itemize}
+\eqbox{
+\textbf{De Broglie Wavelength:} \( \lambda = \displaystyle\frac{h}{p} = \displaystyle\frac{h}{mv} \)
+}
 
-    \item \textbf{Compton Scattering:}
-    Photons scatter off electrons, resulting in a wavelength shift:
-    \[
-    \Delta \lambda = \frac{h}{m_e c} (1 - \cos\theta),
-    \]
-    confirming the particle nature of light.
+\eqbox{
+\textbf{Wave Number:} \( k = \displaystyle\frac{2\pi}{\lambda} \)
+}
+}
 
-    \item \textbf{Wave-Particle Duality:}
-    Light and matter exhibit both wave and particle properties. De Broglie hypothesized the wavelength of matter waves:
-    \[
-    \lambda = \frac{h}{p}.
-    \]
+\subsubsection{Heisenberg Uncertainty Principle}
 
-    \item \textbf{Emission and Absorption Spectra:}
-    Atoms absorb/emits photons corresponding to energy level transitions:
-    \[
-    \Delta E = hf.
-    \]
+\conceptbox{
+\textbf{Heisenberg Uncertainty Principle:}
+A fundamental principle of quantum mechanics stating that certain pairs of physical observables cannot be simultaneously measured with arbitrary precision.
+}
 
-    \item \textbf{Bohr Model:}
-    Electrons occupy quantized orbits, with energy levels:
+\conceptbox{
+\textbf{Key Relations:}
+\begin{itemize}
+    \item \textbf{Position-Momentum Uncertainty:}
+    \eqbox{
     \[
-    E_n = -\frac{13.6}{n^2} \text{ eV for hydrogen}.
+    \Delta x \Delta p \geq \frac{\hbar}{2},
     \]
-
-    \item \textbf{Franck-Hertz Experiment:}
-    Confirmed quantized energy levels by measuring discrete energy loss during electron collisions with atoms.
-
-    \item \textbf{Heisenberg Uncertainty Principle:}
-    Fundamental limits on measurement precision:
+    }
+    where \( \Delta x \) and \( \Delta p \) are the standard deviations of position and momentum, respectively.
+    \item \textbf{Energy-Time Uncertainty:}
+    \eqbox{
     \[
-    \Delta x \Delta p \geq \frac{\hbar}{2}, \quad \Delta E \Delta t \geq \frac{\hbar}{2}.
+    \Delta E \Delta t \geq \frac{\hbar}{2},
     \]
-
-    \item \textbf{Group and Phase Velocities:}
-    \[
-    v_g = \frac{d\omega}{dk}, \quad v_p = \frac{\omega}{k}.
-    \]
-    Group velocity corresponds to the velocity of the particle, while phase velocity is associated with the wave motion.
+    }
+    where \( \Delta E \) and \( \Delta t \) are the uncertainties in energy and time, respectively.
 \end{itemize}
 }
 
 \conceptbox{
-\textbf{Schrödinger Equation:} Governs the quantum mechanical behavior of particles.
+\textbf{Variance-Squared Average Relationship:}
+The uncertainty in a measurable quantity \( A \) is defined as:
+\eqbox{
+\[
+\Delta A = \sqrt{\langle A^2 \rangle - \langle A \rangle^2},
+\]
+}
+where \( \langle A \rangle \) is the expectation value, and \( \langle A^2 \rangle \) is the expectation value of \( A^2 \).
+}
+
+\conceptbox{
+\textbf{Implications:}
+\begin{itemize}
+    \item Establishes the probabilistic nature of quantum mechanics, replacing deterministic classical physics.
+    \item Demonstrates the impossibility of assigning definite trajectories to particles as in classical mechanics.
+\end{itemize}
+}
+
+\subsubsection{Group and Phase Velocities}
+\conceptbox{
+\textbf{Group and Phase Velocities:}
+Velocities associated with wave propagation.
+\begin{itemize}
+    \item Group velocity:
+    \eqbox{
+    \[
+    v_g = \frac{d\omega}{dk},
+    \]
+    }
+    representing the velocity of the wave packet \textbf{and the velocity of the particle}
+    \item Phase velocity:
+    \eqbox{
+    \[
+    v_p = \frac{\omega}{k},
+    \]
+    }
+    representing the velocity of individual wave crests.
+\end{itemize}
+}
+
+
+\subsection{Schrödinger Equation}
+
+\subsubsection{Overview}
+\conceptbox{
+\textbf{Schrödinger Equation:} Governs the quantum mechanical behavior of particles. It describes how the wave function of a particle evolves under the influence of potential energy.
+
+\textbf{General Forms:}
 \begin{itemize}
     \item \textbf{1D Time-Independent Schrödinger Equation:}
+    \eqbox{
     \[
     -\frac{\hbar^2}{2m} \frac{d^2\psi(x)}{dx^2} + V(x)\psi(x) = E\psi(x).
-    \]
-
+    \]}
     \item \textbf{3D Schrödinger Equation (spherical coordinates):}
+    \eqbox{
     \[
     -\frac{\hbar^2}{2m} \nabla^2 \psi(r, \theta, \phi) + V(r)\psi(r, \theta, \phi) = E\psi(r, \theta, \phi).
-    \]
+    \]}
     The solution is separable:
+    \eqbox{
     \[
     \psi(r, \theta, \phi) = R(r)Y(\theta, \phi),
-    \]
+    \]}
     where \( Y(\theta, \phi) \) are spherical harmonics.
+\end{itemize}
+}
 
-    \item \textbf{Free Particle:}
-    For \( V(x) = 0 \), solutions are plane waves:
+\subsubsection{Different Potentials}
+\conceptbox{
+\textbf{Free Particle:}
+\begin{itemize}
+    \item For \( V(x) = 0 \), solutions are plane waves:
+    \eqbox{
     \[
-    \psi(x) = Ae^{i(kx - \omega t)}.
-    \]
-
-    \item \textbf{Particle in a Box:}
-    For \( V(x) = 0 \) inside the box and \( V(x) = \infty \) outside:
-    \[
-    \psi_n(x) = \sqrt{\frac{2}{L}} \sin\left(\frac{n\pi x}{L}\right), \quad E_n = \frac{n^2\pi^2\hbar^2}{2mL^2}.
-    \]
-
-    \item \textbf{Step Potential:}
-    \begin{itemize}
-        \item \( E < U \): Tunneling occurs. The wave function decays exponentially in the classically forbidden region.
-        \item \( E > U \): The wave function is continuous, with partial reflection and transmission.
-    \end{itemize}
+    \psi(x) = Ae^{i(kx - \omega t)},
+    \]}
+    where \( k = \frac{p}{\hbar} \) and \( \omega = \frac{E}{\hbar} \).
 \end{itemize}
 }
 
 \conceptbox{
-\textbf{Hydrogen Atom:} Solutions to the Schrödinger equation in spherical coordinates yield quantized energy levels and quantum numbers.
-
+\textbf{Particle in a Box:}
 \begin{itemize}
-    \item \textbf{Energy Levels:} 
+    \item For \( V(x) = 0 \) inside the box and \( V(x) = \infty \) outside:
+    \eqbox{
     \[
-    E_n = -\frac{13.6 \, \text{eV}}{n^2}.
-    \]
-
-    \item \textbf{Quantum Numbers:}
-    \begin{itemize}
-        \item Principal quantum number \( n \): Determines energy level (\( n = 1, 2, 3, \dots \)).
-        \item Orbital angular momentum quantum number \( l \): Determines the shape of the orbital (\( l = 0, 1, \dots, n-1 \)).
-        \item Magnetic quantum number \( m_l \): Determines the orientation (\( m_l = -l, -l+1, \dots, l \)).
-        \item Spin quantum number \( m_s \): Intrinsic angular momentum (\( m_s = \pm \frac{1}{2} \)).
-    \end{itemize}
-
-    \item \textbf{Wave Functions:}
-    \[
-    \psi(r, \theta, \phi) = R_{nl}(r)Y_l^m(\theta, \phi),
-    \]
-    where \( R_{nl}(r) \) is the radial wave function, and \( Y_l^m(\theta, \phi) \) are spherical harmonics.
-
-    \item \textbf{Radial Probability Distribution:}
-    The probability density \( P(r) \) is given by:
-    \[
-    P(r) = r^2|R_{nl}(r)|^2.
-    \]
+    \psi_n(x) = \sqrt{\frac{2}{L}} \sin\left(\frac{n\pi x}{L}\right), \quad E_n = \frac{n^2\pi^2\hbar^2}{2mL^2}.
+    \]}
 \end{itemize}
 }
-\subsection{Essential Equations}
 
-\eqbox{
-\textbf{Planck's Hypothesis:} \( E = nhf \).
+\conceptbox{
+\textbf{Step Potential:}
+\begin{itemize}
+    \item \( E < U \): Tunneling occurs. The wave function decays exponentially in the classically forbidden region.
+    \item \( E > U \): The wave function is continuous, with partial reflection and transmission.
+\end{itemize}
 }
 
+\subsection{Hydrogen Atom}
+
+\subsubsection{Quantized Energy Levels}
+\conceptbox{
+\textbf{Hydrogen Atom:}
+The Schrödinger equation in spherical coordinates yields quantized energy levels and quantum numbers.
+
+\textbf{Energy Levels:}
 \eqbox{
-\textbf{Photoelectric Effect:} \( KE_{\text{max}} = hf - \phi \).
+\[
+E_n = -\frac{13.6 \, \text{eV}}{n^2}.
+\]}
 }
 
-\eqbox{
-\textbf{Compton Scattering:} \( \Delta \lambda = \frac{h}{m_e c} (1 - \cos\theta) \).
+\subsubsection{Quantum Numbers}
+\conceptbox{
+\textbf{Quantum Numbers:}
+\begin{itemize}
+    \item \textbf{Principal quantum number (\( n \)):} Determines energy level (\( n = 1, 2, 3, \dots \)).
+    \item \textbf{Orbital angular momentum quantum number (\( l \)):} Determines the shape of the orbital (\( l = 0, 1, \dots, n-1 \)).
+    \item \textbf{Magnetic quantum number (\( m_l \)):} Determines the orientation (\( m_l = -l, -l+1, \dots, l \)).
+    \item \textbf{Spin quantum number (\( m_s \)):} Intrinsic angular momentum (\( m_s = \pm \frac{1}{2} \)).
+\end{itemize}
 }
 
+\subsubsection{Wave Functions}
+\conceptbox{
+\textbf{Wave Functions:}
 \eqbox{
-\textbf{De Broglie Wavelength:} \( \lambda = \frac{h}{p} \).
-}
+\[
+\psi(r, \theta, \phi) = R_{nl}(r)Y_l^m(\theta, \phi),
+\]}
+where \( R_{nl}(r) \) is the radial wave function, and \( Y_l^m(\theta, \phi) \) are spherical harmonics.
 
+\textbf{Radial Probability Distribution:}
+The probability density \( P(r) \) is given by:
 \eqbox{
-\textbf{Heisenberg Uncertainty Principles:} \( \Delta x \Delta p \geq \frac{\hbar}{2}, \quad \Delta E \Delta t \geq \frac{\hbar}{2} \).
-}
-
-\eqbox{
-\textbf{Particle in a Box:} \( E_n = \displaystyle\frac{n^2\pi^2\hbar^2}{2mL^2}, \quad \psi_n(x) = \sqrt{\frac{2}{L}} \sin\left(\frac{n\pi x}{L}\right) \).
-}
-
-\eqbox{
-\textbf{Radial Probability Distribution:} \( P(r) = r^2|R_{nl}(r)|^2 \).
+\[
+P(r) = r^2|R_{nl}(r)|^2.
+\]}
 }
 
 \section{Statistical Mechanics}
