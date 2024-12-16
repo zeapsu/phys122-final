@@ -557,14 +557,22 @@ Velocities associated with wave propagation.
             \eqbox{
                 \[
                 \psi_{n_1, n_2, n_3} = A\sin(\frac{n_1 \pi x}{L})\sin(\frac{n_2 \pi y}{L})\sin(\frac{n_3 \pi z}{L})
-                , \quad E_n = \frac{\hbar ^2 \pi^2}{2mL^2}(n_1^2 + n_2^2 + n_3^2)
                 \]
             }
         \item Particular Solution 1D:
             \eqbox{
             \[
-            \psi_n(x) = \sqrt{\frac{2}{L}} \sin\left(\frac{n\pi x}{L}\right), \quad E_n = \frac{n^2\pi^2\hbar^2}{2mL^2} = \frac{n^2 h^2}{8mL^2}.
+            \psi_n(x) = \sqrt{\frac{2}{L}} \sin\left(\frac{n\pi x}{L}\right), \quad E_n = \frac{n^2\pi^2\hbar^2}{2mL^2} = \frac{n^2 h^2}{8mL^2}
             \]}
+        \item Particular Solution 3D:
+            \eqbox{
+                \[
+                \psi_{n_1, n_2, n_3} = \left(\frac{2}{L}\right)^{3/2}\sin(\frac{n_1 \pi x}{L})\sin(\frac{n_2 \pi y}{L})\sin(\frac{n_3 \pi z}{L})
+                \]
+                \[
+                \quad E_n = \frac{\hbar ^2 \pi^2}{2mL^2}(n_1^2 + n_2^2 + n_3^2)
+                \]
+            }
     \end{itemize}
 \end{itemize}
 }
@@ -711,38 +719,175 @@ The distribution of electrons in orbitals follows these rules:
 
 \section{Statistical Mechanics}
 
-\subsection{Key Concepts}
+\subsection{Microscopic vs. Macroscopic States}
 \conceptbox{
+\textbf{Microscopic States:} 
+The state of a system described by the position and momentum of every particle. For \( N \) particles, this requires \( 6N \) values (3 spatial coordinates and 3 momentum components per particle).
+
+\textbf{Macroscopic States:} 
+When \( N \) is large (e.g., Avogadro's number), it is impractical to track each particle. Instead, systems are described using averaged quantities like energy, volume, and temperature.
+
+\textbf{Example:} 
+For 10 coins:
 \begin{itemize}
-    \item Microstates and macrostates: Connection between microscopic and macroscopic descriptions.
-    \item Boltzmann distribution: $P_i = \frac{e^{-E_i/k_BT}}{Z}$.
-    \item Partition function: Summation of states to understand thermodynamic properties, $Z = \sum_i e^{-E_i/k_BT}$.
-    \item Occupation numbers: Average number of particles in a state, $n_i = \frac{1}{e^{(E_i-\mu)/k_BT} \pm 1}$ (for fermions and bosons).
-    \item Degeneracy: The number of microstates corresponding to a single energy level.
-    \item Distinguishable vs. indistinguishable particles: Boltzmann distribution for distinguishable particles; Fermi-Dirac and Bose-Einstein distributions for indistinguishable particles.
+    \item Total \textbf{microstates:} \( 2^{10} = 1024 \).
+    \item Total \textbf{macrostates:} 11 (e.g., all heads, 1 tail and 9 heads, etc.).
 \end{itemize}
 }
 
-\subsection{Essential Equations}
+\subsection{Multiplicity and Degeneracy}
+\conceptbox{
+\textbf{Multiplicity (\( g \)):} 
+The number of microstates corresponding to a macrostate. Calculated as:
 \eqbox{
-\begin{align*}
-    &\text{Boltzmann distribution: } P_i = \frac{e^{-E_i/k_BT}}{Z} \\
-    &\text{Partition function: } Z = \sum_i g_i e^{-E_i/k_BT} \\
-    &\text{Fermi-Dirac distribution: } n_i = \frac{1}{e^{(E_i-\mu)/k_BT} + 1} \\
-    &\text{Bose-Einstein distribution: } n_i = \frac{1}{e^{(E_i-\mu)/k_BT} - 1} \\
-    &\text{Average energy: } \langle E \rangle = \sum_i P_i E_i = -\frac{\partial \ln Z}{\partial \beta} \\
-    &\text{Probability of a state: } P(E) = \frac{g_i e^{-E/k_BT}}{Z}
-\end{align*}
+\[
+g = \binom{N}{k} = \frac{N!}{k!(N-k)!},
+\]
+}
+where \( k \) is the number of particles in a specific state.
+
+\textbf{Example:}
+For 10 coins with 3 tails and 7 heads:
+\[
+g = \binom{10}{3} = \frac{10!}{3!7!} = 120.
+\]
+
+\textbf{Degeneracy:} 
+The number of quantum states associated with a given energy level.
+
+\textbf{Microcanonical Ensemble:} 
+A set of all microstates with the same energy, where each is equally probable.
 }
 
-\subsection{Units and Unit Conversions}
-\tipbox{
+\subsection{Statistical Distributions}
+\conceptbox{
+\textbf{Probability Distributions:}
+The likelihood of finding a particle in a state with energy \( E_i \) depends on temperature (\( T \)) and energy. The three primary distributions are:
+
 \begin{itemize}
-    \item Energy: $1 \text{ eV} = 1.602 \times 10^{-19} \text{ J}$.
-    \item Temperature: Convert between Kelvin and energy using $k_B = 1.38 \times 10^{-23} \text{ J/K}$.
-    \item Wavelength and frequency: $E = hf$, $\lambda = \frac{c}{f}$, with $hc = 1240 \text{ eV} \cdot \text{nm}$.
+    \item \textbf{Maxwell-Boltzmann (Distinguishable Particles):}
+    Applicable when \( T \gg T_c \) (thermal energy \( kT \) is much larger than quantum energy level spacing) and particle density is low.
+    \eqbox{
+    \[
+    f(E) = f_B(E) = Ae^{-E/kT}
+    \]
+    }
+    \item \textbf{Bose-Einstein (Indistinguishable Bosons):}
+    Below the critical temperature (\( T_c \)), a Bose-Einstein condensate forms as many bosons occupy the ground state.
+    \eqbox{
+    \[
+    f(E) = f_{BE}(E) = \frac{1}{e^\alpha e^{E / k_BT} - 1}.
+    \]
+    }
+    \item \textbf{Fermi-Dirac (Indistinguishable Fermions):}
+    Governed by the Pauli exclusion principle, where no two fermions occupy the same quantum state.
+    \eqbox{
+    \[
+    f(E) = f_{FD}(E) = \frac{1}{e^\alpha e^{E / k_BT} + 1}.
+    \]
+    }
 \end{itemize}
 }
+\conceptbox{
+\textbf{Occupation Number:}
+\begin{itemize}
+    \item The \textbf{occupation number}, \( n(E)dE \), represents the average number of particles in a quantum state with energy between \( E \) and \( E + dE \).
+    \item It is calculated as:
+    \eqbox{
+    \[
+    n(E)dE = f(E)g(E)dE,
+    \]
+    }
+    where:
+    \begin{itemize}
+        \item \( f(E) \) is the probability distribution (Maxwell-Boltzmann, Bose-Einstein, or Fermi-Dirac).
+        \item \( g(E)dE \) is the degeneracy, or the number of states available in the energy range \( E \) to \( E + dE \).
+    \end{itemize}
+\end{itemize}
+}
+
+\subsection{Thermal Probability and Average Quantities}
+\conceptbox{
+\textbf{Thermal Probability:}
+The probability of finding a particle in a specific energy state depends on the Boltzmann factor:
+\eqbox{
+\[
+P(E) = \frac{e^{-E/k_BT}}{Z},
+\]
+}
+where \( Z = \sum e^{-E_i/k_BT} \) is the partition function.
+
+\textbf{Average Energy:}
+\eqbox{
+\[
+\langle E \rangle = -\frac{\partial \ln Z}{\partial \beta}, \quad \text{where } \beta = \frac{1}{k_BT}.
+\]
+}
+
+\textbf{Normalization Conditions:}
+\begin{itemize}
+    \item Total number of particles:
+    \eqbox{
+    \[
+    \int f(E)g(E)dE = N.
+    \]
+    }
+    \item Total energy of the system:
+    \eqbox{
+    \[
+    \int f(E)g(E)E\,dE = E_{\text{tot}}.
+    \]
+    }
+\end{itemize}
+
+\textbf{Energy Density for Photon Gas:}
+\eqbox{
+\[
+u(E)dE = \frac{8\pi}{(hc)^3} E^3 \frac{1}{e^{E/k_BT} - 1} dE.
+\]
+}
+
+\textbf{Degeneracy Pressure:}
+Arises due to the Pauli exclusion principle and prevents fermions from collapsing under compression, as seen in white dwarfs and neutron stars.
+}
+
+\subsection{Bose-Einstein Condensation}
+\conceptbox{
+\textbf{Bose-Einstein Condensation:}
+Occurs when a system of bosons is cooled below a critical temperature (\( T_c \)), causing many particles to occupy the ground state.
+
+\textbf{Key Relations:}
+\begin{itemize}
+    \item Critical temperature:
+    \eqbox{
+    \[
+    T_c = \left(\frac{h^2}{2\pi mk}\right) \left(\frac{N}{V\zeta(3/2)}\right)^{2/3}.
+    \]
+    }
+    where \(\zeta(3/2) = 2.612\)
+    \item Fraction in the ground state:
+    \eqbox{
+    \[
+    \frac{N_0}{N} = 1 - \left(\frac{T}{T_c}\right)^{3/2}.
+    \]
+    }
+\end{itemize}
+}
+
+\subsection{Degeneracy Pressure}
+\conceptbox{
+\textbf{Degeneracy Pressure:}
+Prevents the collapse of fermionic systems due to quantum mechanical effects, critical in white dwarfs and neutron stars.
+
+\textbf{Key Relation:}
+\eqbox{
+\[
+P \propto \left(\frac{\hbar^2}{m}\right)\left(\frac{N}{V}\right)^{5/3}.
+\]
+}
+}
+
+\newpage
 
 \section{Quick Reference}
 
@@ -812,6 +957,7 @@ The distribution of electrons in orbitals follows these rules:
     \item $1 \text{ eV} = 1.602 \times 10^{-19} \text{ J}$
     \item $hc = 1240$ eV $\cdot$ nm
     \item $\hbar c = \displaystyle\frac{1240}{2\pi}$ eV $\cdot$ nm
+    \item Temperature: Convert between Kelvin and energy using $k_B = 1.38 \times 10^{-23} \text{ J/K}$.
 \end{itemize}
 }
 
