@@ -533,55 +533,93 @@ Velocities associated with wave propagation.
     \item For \( V(x) = 0 \), solutions are plane waves:
     \eqbox{
     \[
-    \psi(x) = Ae^{i(kx - \omega t)},
+    \psi(x) = Ae^{ikx} + Be^{-ikx},
     \]}
-    where \( k = \frac{p}{\hbar} \) and \( \omega = \frac{E}{\hbar} \).
+    where \( k = \frac{p}{\hbar} \), \( \omega = \frac{E}{\hbar} \), and \(p = \hbar k = \sqrt{2mE}\).
+    \item \(e^{ikx}\) is right moving plane wave and \(e^{-ikx}\) is left moving plane wave.
+    \item For full time dependent, \(\Psi(x,t) = \psi(x)e^{-i\omega t}\)
+    \item Wave function is not normalizable!
 \end{itemize}
 }
 
 \conceptbox{
-\textbf{Particle in a Box:}
+\textbf{Particle in a Box/Infinite Square Well Potential:}
 \begin{itemize}
     \item For \( V(x) = 0 \) inside the box and \( V(x) = \infty \) outside:
-    \eqbox{
-    \[
-    \psi_n(x) = \sqrt{\frac{2}{L}} \sin\left(\frac{n\pi x}{L}\right), \quad E_n = \frac{n^2\pi^2\hbar^2}{2mL^2}.
-    \]}
+    \begin{itemize}
+        \item General Solution 1D:
+            \eqbox{
+                \[
+                    \psi_n(x) = A\sin\left(\frac{n\pi x}{L}\right)
+                \]
+            }
+        \item General Solution 3D:
+            \eqbox{
+                \[
+                \psi_{n_1, n_2, n_3} = A\sin(\frac{n_1 \pi x}{L})\sin(\frac{n_2 \pi y}{L})\sin(\frac{n_3 \pi z}{L})
+                , \quad E_n = \frac{\hbar ^2 \pi^2}{2mL^2}(n_1^2 + n_2^2 + n_3^2)
+                \]
+            }
+        \item Particular Solution 1D:
+            \eqbox{
+            \[
+            \psi_n(x) = \sqrt{\frac{2}{L}} \sin\left(\frac{n\pi x}{L}\right), \quad E_n = \frac{n^2\pi^2\hbar^2}{2mL^2} = \frac{n^2 h^2}{8mL^2}.
+            \]}
+    \end{itemize}
 \end{itemize}
 }
+
 
 \conceptbox{
 \textbf{Step Potential:}
+\[
+V(x) = 
+\begin{cases} 
+0, & x < 0 \\ 
+U_0, & x \geq 0 
+\end{cases}
+\]
+The particle's behavior depends on whether its energy \( E \) is greater than or less than \( U_0 \).
+}
+
+\conceptbox{
+\subsubsection*{Case 1: \( E > U_0 \)}
+
+\textbf{Wave Function Solutions:}
 \begin{itemize}
-    \item \( E < U \): Tunneling occurs. The wave function decays exponentially in the classically forbidden region.
-    \item \( E > U \): The wave function is continuous, with partial reflection and transmission.
+    \item \( x < 0 \): \( \psi(x) = Ae^{ik_0x} + Be^{-ik_0x}, \quad k_0 = \sqrt{\frac{2mE}{\hbar^2}} \)
+    \item \( x \geq 0 \): \( \psi(x) = Ce^{ik_1x}, \quad k_1 = \sqrt{\frac{2m(E - U_0)}{\hbar^2}} \)
+\end{itemize}
+
+\textbf{Reflection and Transmission Coefficients:}
+\[
+R = \left( \frac{k_0 - k_1}{k_0 + k_1} \right)^2, \quad T = \frac{4k_0k_1}{(k_0 + k_1)^2}, \quad R + T = 1
+\]
+}
+
+
+\conceptbox{
+\subsubsection*{Case 2: \( E < U_0 \)}
+\textbf{Wave Function Solutions:}
+\begin{itemize}
+    \item \( x < 0 \): \( \psi(x) = Ae^{ik_0x} + Be^{-ik_0x}, \quad k_0 = \sqrt{\frac{2mE}{\hbar^2}} \)
+    \item \( x \geq 0 \): \( \psi(x) = De^{-\kappa x}, \quad \kappa = \sqrt{\frac{2m(U_0 - E)}{\hbar^2}} \)
+\end{itemize}
+
+\textbf{Tunneling Insight:}
+The particle cannot propagate in the \( x \geq 0 \) region but has a finite probability of being found in the barrier due to tunneling.
+}
+
+\conceptbox{
+\textbf{Key Insights:}
+\begin{itemize}
+    \item For \( E > U_0 \), the particle has probabilities of transmission and reflection at the step.
+    \item For \( E < U_0 \), the particle exhibits tunneling with an exponentially decaying wave function in the barrier.
 \end{itemize}
 }
+
 
 \subsection{Hydrogen Atom}
-
-\subsubsection{Quantized Energy Levels}
-\conceptbox{
-\textbf{Hydrogen Atom:}
-The Schrödinger equation in spherical coordinates yields quantized energy levels and quantum numbers.
-
-\textbf{Energy Levels:}
-\eqbox{
-\[
-E_n = -\frac{13.6 \, \text{eV}}{n^2}.
-\]}
-}
-
-\subsubsection{Quantum Numbers}
-\conceptbox{
-\textbf{Quantum Numbers:}
-\begin{itemize}
-    \item \textbf{Principal quantum number (\( n \)):} Determines energy level (\( n = 1, 2, 3, \dots \)).
-    \item \textbf{Orbital angular momentum quantum number (\( l \)):} Determines the shape of the orbital (\( l = 0, 1, \dots, n-1 \)).
-    \item \textbf{Magnetic quantum number (\( m_l \)):} Determines the orientation (\( m_l = -l, -l+1, \dots, l \)).
-    \item \textbf{Spin quantum number (\( m_s \)):} Intrinsic angular momentum (\( m_s = \pm \frac{1}{2} \)).
-\end{itemize}
-}
 
 \subsubsection{Wave Functions}
 \conceptbox{
@@ -598,6 +636,77 @@ The probability density \( P(r) \) is given by:
 \[
 P(r) = r^2|R_{nl}(r)|^2.
 \]}
+}
+
+\subsubsection{Quantum Numbers}
+\conceptbox{
+\textbf{Quantum Numbers:}
+\begin{itemize}
+    \item \textbf{Principal quantum number (\( n \)):} Determines energy level (\( n = 1, 2, 3, \dots \)).
+    \begin{itemize}
+        \item Tells us the \textbf{energy} of the Hydrogen atom
+        \eqbox{
+            \[
+                E(\psi_{n, \ell, m}) = -\frac{13.6\text{ eV}}{n^2}
+            \]
+        }
+    \end{itemize}
+    \item \textbf{Orbital angular momentum quantum number (\( \ell \)):} Determines the shape of the orbital (\( \ell = 0, 1, \dots, n-1 \)).
+    \begin{itemize}
+        \item Tells us the \textbf{total angular momentum} of the Hydrogen atom
+        \eqbox{
+            \[
+                L(\psi_{n, \ell, m}) = \hbar \sqrt{\ell(\ell + 1)}
+            \]
+        }
+    \end{itemize}
+    \item \textbf{Magnetic quantum number (\( m \)):} Determines the orientation (\( m = -\ell, -\ell+1, \dots, \ell \)).
+    \begin{itemize}
+        \item Tells us the \textbf{z-component of angular momentum} of the Hydrogen atom
+        \eqbox{
+            \[
+                L_z(\psi_{n, \ell, m}) = \hbar m
+            \]
+        }
+    \end{itemize}
+    \item \textbf{Spin quantum number (\( m_s \)):} Intrinsic angular momentum (\( m_s = \pm \frac{1}{2} \)).
+    \begin{itemize}
+        \item Has to be rotated \textbf{720 degrees} for it to return to original state
+        \item Fermions have half integer spin (electrons, muons, protons, neutrons, etc.)
+        \item Bosons have integer spin (photons, W and Z bosons, Higgs boson, etc.)
+        \item Stern-Gerlach Experiment
+    \end{itemize}
+\end{itemize}
+}
+
+\subsubsection{Multi-Electron Atoms and the Pauli Exclusion Principle}
+
+\conceptbox{
+\textbf{Multi-Electron Atoms:}
+In atoms with more than one electron, the arrangement of electrons is determined by their energies and quantum states:
+\begin{itemize}
+    \item Electrons occupy orbitals starting from the lowest energy levels, but no more than two electrons can share the same orbital.
+    \item Inner electrons shield outer electrons from the full nuclear charge, affecting orbital energies.
+    \item Example: In Potassium (\( Z = 19 \)), the electron configuration is \( 1s^2 2s^2 2p^6 3s^2 3p^6 4s^1 \). The last electron occupies the \( 4s \) orbital instead of \( 3d \) due to shielding.
+\end{itemize}
+}
+
+\conceptbox{
+\textbf{Pauli Exclusion Principle:}
+No two electrons in an atom can occupy the same quantum state. This means:
+\begin{itemize}
+    \item No two electrons can have identical quantum numbers (\( n, l, m, m_s \)).
+    \item This principle determines the filling of electron orbitals and gives rise to electron configurations.
+\end{itemize}
+}
+
+\conceptbox{
+\textbf{Electron Configuration:}
+The distribution of electrons in orbitals follows these rules:
+\begin{itemize}
+    \item Electrons are added one at a time to the lowest energy subshell available.
+    \item The periodic table reflects the outer electron configurations, which dictate chemical properties.
+\end{itemize}
 }
 
 \section{Statistical Mechanics}
