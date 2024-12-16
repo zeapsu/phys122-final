@@ -75,44 +75,167 @@
 \section{Special Relativity}
 
 \subsection{Key Concepts}
+
 \conceptbox{
+\textbf{Postulates:} 
 \begin{itemize}
-    \item Postulates: Laws of physics are the same in all inertial frames; the speed of light is constant in a vacuum for all observers.
-    \item Relativity of Simultaneity: two events that appear to happen at the same time for one observer may not appear simultaneous to another observer moving relative to the first.
-    \item Relativistic velocity addition: These problems generally have 3 objects: A stationary object and 2 moving objects. Notation is usually (or $u$ and $v$ reversed):
+    \item Laws of physics are the same in all inertial frames.
+    \item The speed of light is constant in a vacuum for all observers, regardless of their motion relative to the source.
+\end{itemize}
+}
+
+\conceptbox{
+\textbf{Relativity of Simultaneity:} 
+Two events that appear simultaneous to one observer may not appear simultaneous to another observer moving relative to the first.
+}
+
+\conceptbox{
+\textbf{Relativistic Velocity Addition:} 
+These problems typically involve three objects:
+\begin{itemize}
+    \item $S$: Stationary reference frame.
+    \item $S'$: Reference frame of the second moving object.
+    \item $u$: Velocity of the first object relative to the stationary frame.
+    \item $v$: Velocity of the second object relative to the stationary frame.
+    \item $u'$: Velocity of the first object relative to the second moving object.
+\end{itemize}
+}
+
+\conceptbox{
+\textbf{The Relativistic Invariant Interval:} 
+A spacetime quantity that remains unchanged under Lorentz transformations.
+
+\begin{itemize}
+    \item \textbf{Properties:}
     \begin{itemize}
-        \item $S$ = stationary frame
-        \item $S'$ = 2nd moving object reference frame
-        \item $v$ = velocity of 2nd object with respect to stationary frame
-        \item $u$ = velocity of 1st object with respect to stationary frame
-        \item $u'$ = velocity of 1st object with respect to 2nd object
+        \item Negative spatial components distinguish it from a Euclidean interval.
+        \item It can be positive, negative, or zero:
+        \begin{itemize}
+            \item \textbf{Time-like ($s^2 > 0$):} Events can be connected by a physical particle moving slower than the speed of light.
+            \item \textbf{Space-like ($s^2 < 0$):} Events are separated by more distance than time; no signal can connect them.
+            \item \textbf{Light-like ($s^2 = 0$):} Events are connected by a light signal.
+        \end{itemize}
     \end{itemize}
-    \item Relativistic Conservation Laws:
+    \item \textbf{Relationship to Proper Time and Proper Length:}
     \begin{itemize}
-        \item In an isolated system of particles, the relativistic total energy (kinetic energy plus rest energy) remains constant
-        \item In an isolated system of particles, the total linear momentum remains constant
+        \item \textbf{Proper Time ($\Delta \tau$):} In the frame where the particle is stationary, the interval relates to proper time.
+        \item \textbf{Proper Length ($\Delta L$):} In the frame where events are simultaneous, the interval relates to proper length.
     \end{itemize}
+\end{itemize}
+}
+
+\conceptbox{
+\textbf{Four-Vectors}
+\begin{itemize}
+    \item \textbf{Four-Position:} Represents the spacetime coordinates of an event:
+    \[
+    x^\mu = (ct, \vec{x}) = (ct, x, y, z)
+    \]
+    where $ct$ is the time component, and $\vec{x} = (x, y, z)$ is the spatial position in 3D space.
+
+    \item \textbf{Four-Velocity:} Describes the rate of change of four-position with respect to proper time $\tau$:
+    \[
+    u^\mu = \frac{dx^\mu}{d\tau} = \gamma(c, \vec{v})
+    \]
+    where $\vec{v} = (v_x, v_y, v_z)$ is the 3-velocity and $\gamma = \frac{1}{\sqrt{1 - v^2/c^2}}$.
+    \begin{itemize}
+        \item The invariant magnitude of four-velocity is $u^\mu u_\mu = c^2$.
+    \end{itemize}
+
+    \item \textbf{Four-Momentum:} Represents the energy and momentum of a particle:
+    \[
+    p^\mu = m_0 u^\mu = (\frac{E}{c}, \vec{p})
+    \]
+    where $\vec{p} = \gamma m_0 \vec{v}$ is the 3-momentum, and $E = \gamma m_0 c^2$ is the total energy of the particle.
+    \begin{itemize}
+        \item The invariant magnitude of four-momentum is $p^\mu p_\mu = m_0^2 c^2$, related to the rest energy.
+    \end{itemize}
+
+    \item \textbf{Dot Products of Four-Vectors:}
+    \begin{itemize}
+        \item Inner products between four-vectors are invariant under Lorentz transformations.
+        \item Example: For two four-momentum vectors $p^\mu$ and $q^\mu$, the dot product:
+        \[
+        p^\mu q_\mu = \frac{E_p E_q}{c^2} - \vec{p} \cdot \vec{q}
+        \]
+        is invariant and depends on the relative energies and momenta in 3D space.
+    \end{itemize}
+
+    \item \textbf{Spacetime Diagrams:} Four-vectors can be visualized in spacetime diagrams:
+    \begin{itemize}
+        \item Time-like vectors point mostly along the time axis.
+        \item Space-like vectors point mostly along spatial axes.
+        \item Light-like vectors lie on the cone separating time-like and space-like regions.
+    \end{itemize}
+\end{itemize}
+}
+
+\conceptbox{
+\textbf{Relativistic Conservation Laws:} 
+In an isolated system of particles:
+\begin{itemize}
+    \item The relativistic total energy (kinetic energy plus rest energy) remains constant.
+    \item The total linear momentum remains constant.
 \end{itemize}
 }
 
 \subsection{Essential Equations}
 \eqbox{
-    \begin{itemize}
-        \item Time dilation: $\Delta t = \gamma \Delta t_0$, where $\gamma = 1/\sqrt{1 - v^2/c^2}$.
-        \item Length contraction: $L = L_0 \gamma^{-1} = L_0 \sqrt{1 - v^2/c^2}$.
-        \item Relativistic addition of velocities: $u' = \frac{u + v}{1 + uv/c^2}$.
-        \item Lorentz transformation (time):  $t' = \gamma(t - \frac{vx}{c^2})$
-        \item Lorentz transformation (space):  $x' = \gamma(x - vt)$
-        \item Doppler Shift:
-        \begin{itemize}
-            \item Redshift (receeding): $f_{obs} = \sqrt{\displaystyle\frac{1 - v/c}{1 + v/c}}f_{source}$ and $ \lambda_{obs} = \sqrt{\displaystyle\frac{1 + v/c}{1 - v/c}}\lambda_{source} $
-            \item Blueshift (approaching): $f_{obs} = \sqrt{\displaystyle\frac{1 + v/c}{1 - v/c}}f_{source}$ and $ \lambda_{obs} = \sqrt{\displaystyle\frac{1 - v/c}{1 + v/c}}\lambda_{source} $
-        \end{itemize} 
-        \item Kinetic energy: $KE = (\gamma - 1)m_0c^2$
-        \item Total energy:  $E = \gamma m_0c^2$
-        \item Energy-momentum relation: $E^2 = (pc)^2 + (m_0c^2)^2$.
-    \end{itemize}
+\textbf{Time Dilation:} $\Delta t = \gamma \Delta t_0$, where $\gamma = \frac{1}{\sqrt{1 - v^2/c^2}}$.
 }
+
+\eqbox{
+\textbf{Length Contraction:} $L = L_0 \gamma^{-1} = L_0 \sqrt{1 - v^2/c^2}$.
+}
+
+\eqbox{
+\textbf{Relativistic Addition of Velocities:} $u' = \displaystyle\frac{u + v}{1 + uv/c^2}$.
+}
+
+\eqbox{
+\textbf{Lorentz Transformations:}
+\begin{itemize}
+    \item \textbf{Time:} $t' = \gamma(t - \frac{vx}{c^2})$.
+    \item \textbf{Space:} $x' = \gamma(x - vt)$.
+\end{itemize}
+}
+
+\eqbox{
+\textbf{Relativistic Dynamics:}
+\begin{itemize}
+    \item \textbf{Kinetic Energy:} $KE = (\gamma - 1)m_0c^2$.
+    \item \textbf{Total Energy:} $E = \gamma m_0c^2$.
+\end{itemize}
+}
+
+\eqbox{
+\textbf{Energy-Momentum Relation:} $E^2 = (pc)^2 + (m_0c^2)^2$.
+}
+
+\eqbox{
+\textbf{Four-Position:}
+\begin{itemize}
+    \item Defined as $x^\mu = (ct, x, y, z)$, where $x^\mu$ is the spacetime coordinate.
+    \item Invariant interval: $s^2 = (ct)^2 - x^2 - y^2 - z^2$.
+\end{itemize}
+}
+
+\eqbox{
+\textbf{Four-Velocity:}
+\begin{itemize}
+    \item Defined as $u^\mu = \frac{dx^\mu}{d\tau}$, where $\tau$ is proper time.
+    \item Invariant dot product: $u^\mu u_\mu = c^2$.
+\end{itemize}
+}
+
+\eqbox{
+\textbf{Four-Momentum:}
+\begin{itemize}
+    \item Defined as $p^\mu = m_0 u^\mu$, where $m_0$ is the rest mass.
+    \item Invariant: $p^\mu p_\mu = -m_0^2c^2$.
+\end{itemize}
+}
+
 
 \section{Early Quantum Theory and Quantum Mechanics}
 
