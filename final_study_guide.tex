@@ -90,6 +90,64 @@ Two events that appear simultaneous to one observer may not appear simultaneous 
 }
 
 \conceptbox{
+\textbf{Lorentz Transformations:}
+The Lorentz transformations relate the spacetime coordinates of an event as measured in two inertial reference frames moving at a constant velocity relative to each other. These transformations preserve the invariant interval (\( \Delta s^2 \)).
+
+\textbf{Transformations:}
+\begin{itemize}
+    \item For a frame \( S' \) moving with velocity \( v \) along the \( x \)-axis relative to \( S \):
+    \begin{itemize}
+        \item Time: \( t' = \gamma \left( t - \frac{vx}{c^2} \right) \)
+        \item Space (\( x \)-direction): \( x' = \gamma \left( x - vt \right) \)
+        \item Space (\( y \)- and \( z \)-directions): \( y' = y, \quad z' = z \)
+    \end{itemize}
+    \item \( \gamma = \frac{1}{\sqrt{1 - v^2/c^2}} \) is the Lorentz factor.
+\end{itemize}
+
+\textbf{Lorentz Transformation Matrix:}
+The Lorentz transformation can be expressed using matrix multiplication:
+\[
+x' = \Lambda x,
+\]
+where \( \Lambda \) is the Lorentz transformation matrix. For a boost along the \( x \)-axis, \( \Lambda \) is:
+\[
+\Lambda =
+\begin{bmatrix}
+\gamma & -\gamma \beta & 0 & 0 \\
+-\gamma \beta & \gamma & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{bmatrix},
+\]
+with \( \beta = v/c \).
+
+\textbf{Key Properties:}
+\begin{itemize}
+    \item The determinant of \( \Lambda \) is \( +1 \), ensuring the transformations preserve spacetime orientation.
+    \item The inverse transformation is obtained by negating \( v \), which flips the sign of \( \beta \):
+    \[
+    \Lambda^{-1} = \begin{bmatrix}
+    \gamma & \gamma \beta & 0 & 0 \\
+    \gamma \beta & \gamma & 0 & 0 \\
+    0 & 0 & 1 & 0 \\
+    0 & 0 & 0 & 1
+    \end{bmatrix}.
+    \]
+    \item The Lorentz transformations preserve the invariant interval:
+    \[
+    \Delta s^2 = x \cdot x = x'\cdot x'.
+    \]
+\end{itemize}
+
+\textbf{Applications:}
+\begin{itemize}
+    \item Lorentz transformations explain time dilation, length contraction, and the relativity of simultaneity.
+    \item They are fundamental in deriving the transformations for four-vectors such as four-momentum and four-velocity.
+\end{itemize}
+}
+
+
+\conceptbox{
 \textbf{Relativistic Velocity Addition:} 
 These problems typically involve three objects:
 \begin{itemize}
@@ -111,9 +169,9 @@ A spacetime quantity that remains unchanged under Lorentz transformations.
         \item Negative spatial components distinguish it from a Euclidean interval.
         \item It can be positive, negative, or zero:
         \begin{itemize}
-            \item \textbf{Time-like ($s^2 > 0$):} Events can be connected by a physical particle moving slower than the speed of light.
-            \item \textbf{Space-like ($s^2 < 0$):} Events are separated by more distance than time; no signal can connect them.
-            \item \textbf{Light-like ($s^2 = 0$):} Events are connected by a light signal.
+            \item \textbf{Time-like ($\Delta s^2 > 0$):} Events can be connected by a physical particle moving slower than the speed of light.
+            \item \textbf{Space-like ($\Delta s^2 < 0$):} Events are separated by more distance than time; no signal can connect them.
+            \item \textbf{Light-like ($\Delta s^2 = 0$):} Events are connected by a light signal.
         \end{itemize}
     \end{itemize}
     \item \textbf{Relationship to Proper Time and Proper Length:}
@@ -125,57 +183,89 @@ A spacetime quantity that remains unchanged under Lorentz transformations.
 }
 
 \conceptbox{
-\textbf{Four-Vectors}
+\textbf{Four-Vectors:} A four-vector in special relativity is a quantity defined in four-dimensional spacetime that transforms under Lorentz transformations. It has the general form:
+\[
+a = (a^0, \vec{a}),
+\]
+where \( a^0 \) is the time component ($c\Delta t$), and \( \vec{a} = (a^1, a^2, a^3) \) is the spatial 3-vector component.
+
+
+\textbf{Key Properties:}
 \begin{itemize}
-    \item \textbf{Four-Position:} Represents the spacetime coordinates of an event:
+    \item The \textbf{invariant dot product} of two four-vectors \( a \) and \( b \) is:
     \[
-    x^\mu = (ct, \vec{x}) = (ct, x, y, z)
+    a \cdot b = a^0 b^0 - \vec{a} \cdot \vec{b}.
     \]
-    where $ct$ is the time component, and $\vec{x} = (x, y, z)$ is the spatial position in 3D space.
-
-    \item \textbf{Four-Velocity:} Describes the rate of change of four-position with respect to proper time $\tau$:
+    This quantity is Lorentz invariant (unchanged under Lorentz transformations).
+    \item The invariant magnitude of a four-vector is a special case of the dot product:
     \[
-    u^\mu = \frac{dx^\mu}{d\tau} = \gamma(c, \vec{v})
+    a \cdot a = (a^0)^2 - |\vec{a}|^2.
     \]
-    where $\vec{v} = (v_x, v_y, v_z)$ is the 3-velocity and $\gamma = \frac{1}{\sqrt{1 - v^2/c^2}}$.
+    \item The magnitude classifies four-vectors as:
     \begin{itemize}
-        \item The invariant magnitude of four-velocity is $u^\mu u_\mu = c^2$.
+        \item \textbf{Time-like:} \( a \cdot a > 0 \) then $ \Delta s^2 = c^2\tau^2$.
+        \item \textbf{Space-like:} \( a \cdot a < 0 \) then $ -\Delta s^2 = L $.
+        \item \textbf{Light-like:} \( a \cdot a = 0 \) then $ \Delta s^2 = 0 $.
     \end{itemize}
+\end{itemize}
 
-    \item \textbf{Four-Momentum:} Represents the energy and momentum of a particle:
+\textbf{Common Examples:}
+\begin{itemize}
+    \item \textbf{Four-Position:} \( x = (ct, \vec{x}) \), where \( ct \) represents the time component and \( \vec{x} = (x, y, z) \) is the spatial position.
+    \item \textbf{Four-Velocity:} \( u = \displaystyle\frac{dx}{d\tau} = \gamma (c, \vec{v}) \), where \( \gamma = \frac{1}{\sqrt{1 - v^2/c^2}} \), \( c \) is the speed of light, and \( \vec{v} \) is the 3-velocity.
+    \item \textbf{Four-Momentum:} \( p = mu = \gamma m (c, \vec{v}) = \left( \frac{E}{c}, \vec{p} \right) \), where \( E \) is the total energy and \( \vec{p} \) is the 3-momentum.
+\end{itemize}
+
+\textbf{Applications of the Invariant Dot Product:}
+\begin{itemize}
+    \item \textbf{Four-Velocity:} The invariant magnitude of \( u \) is always positive and equal to \( c^2 \):
     \[
-    p^\mu = m_0 u^\mu = (\frac{E}{c}, \vec{p})
+    u \cdot u = c^2.
     \]
-    where $\vec{p} = \gamma m_0 \vec{v}$ is the 3-momentum, and $E = \gamma m_0 c^2$ is the total energy of the particle.
-    \begin{itemize}
-        \item The invariant magnitude of four-momentum is $p^\mu p_\mu = m_0^2 c^2$, related to the rest energy.
-    \end{itemize}
-
-    \item \textbf{Dot Products of Four-Vectors:}
-    \begin{itemize}
-        \item Inner products between four-vectors are invariant under Lorentz transformations.
-        \item Example: For two four-momentum vectors $p^\mu$ and $q^\mu$, the dot product:
-        \[
-        p^\mu q_\mu = \frac{E_p E_q}{c^2} - \vec{p} \cdot \vec{q}
-        \]
-        is invariant and depends on the relative energies and momenta in 3D space.
-    \end{itemize}
-
-    \item \textbf{Spacetime Diagrams:} Four-vectors can be visualized in spacetime diagrams:
-    \begin{itemize}
-        \item Time-like vectors point mostly along the time axis.
-        \item Space-like vectors point mostly along spatial axes.
-        \item Light-like vectors lie on the cone separating time-like and space-like regions.
-    \end{itemize}
+    \item \textbf{Four-Momentum:} The invariant magnitude of \( p \) relates to the particle's rest mass \( m \):
+    \[
+    p \cdot p = m^2 c^2.
+    \]
+    For massless particles, like photons, \( p \cdot p = 0 \) and \( E = |\vec{p}|c \).
 \end{itemize}
 }
 
+
+
 \conceptbox{
 \textbf{Relativistic Conservation Laws:} 
-In an isolated system of particles:
+The principles of conservation of energy and momentum extend to special relativity with some key differences from classical mechanics. 
+
 \begin{itemize}
-    \item The relativistic total energy (kinetic energy plus rest energy) remains constant.
-    \item The total linear momentum remains constant.
+    \item \textbf{Relativistic Total Energy:} 
+    \begin{itemize}
+        \item Total energy includes kinetic energy and rest energy: \( E = \gamma m_0 c^2 \), where \( \gamma = \frac{1}{\sqrt{1 - v^2/c^2}} \).
+        \item Rest energy (\( m_0 c^2 \)) accounts for the energy associated with the rest mass of a particle.
+        \item Total energy is conserved in all relativistic processes, including collisions.
+    \end{itemize}
+
+    \item \textbf{Relativistic Momentum:} 
+    \begin{itemize}
+        \item Momentum in special relativity is defined as \( \vec{p} = \gamma m_0 \vec{v} \).
+        \item The magnitude and direction of the total momentum in an isolated system are conserved.
+    \end{itemize}
+
+    \item \textbf{Relativistic Collisions:} 
+    \begin{itemize}
+        \item Unlike classical mechanics, all forms of energy (including rest energy) contribute to the total energy of the system.
+        \item The distinction between elastic and inelastic collisions in classical mechanics is less useful in relativity. Instead, we track the conservation of total energy and momentum.
+        \item Mass is not generally conserved in relativistic collisions. For example, mass can be converted into energy (e.g., pair annihilation) or vice versa (e.g., particle creation).
+    \end{itemize}
+
+    \item \textbf{Implications:} 
+    \begin{itemize}
+        \item Energy and momentum form components of the four-momentum vector: \( p^\mu = \left( \frac{E}{c}, \vec{p} \right) \).
+        \item Conservation laws apply to the four-momentum vector in all inertial frames:
+        \[
+        \sum p^\mu_{\text{initial}} = \sum p^\mu_{\text{final}}
+        \]
+        \item These conservation laws ensure the invariance of physical processes across reference frames.
+    \end{itemize}
 \end{itemize}
 }
 
@@ -205,6 +295,7 @@ In an isolated system of particles:
 \begin{itemize}
     \item \textbf{Kinetic Energy:} $KE = (\gamma - 1)m_0c^2$.
     \item \textbf{Total Energy:} $E = \gamma m_0c^2$.
+    \item \textbf{Rest Mass: } $E = m_0c^2$
 \end{itemize}
 }
 
@@ -215,8 +306,8 @@ In an isolated system of particles:
 \eqbox{
 \textbf{Four-Position:}
 \begin{itemize}
-    \item Defined as $x^\mu = (ct, x, y, z)$, where $x^\mu$ is the spacetime coordinate.
-    \item Invariant interval: $s^2 = (ct)^2 - x^2 - y^2 - z^2$.
+    \item Defined as $x = (c\Delta t, x, y, z)$, where $x$ is the spacetime coordinate.
+    \item Invariant interval: $\Delta s^2 = (c \Delta t)^2 - \Delta x^2 -  \Delta y^2 - \Delta z^2$.
 \end{itemize}
 }
 
@@ -231,8 +322,8 @@ In an isolated system of particles:
 \eqbox{
 \textbf{Four-Momentum:}
 \begin{itemize}
-    \item Defined as $p^\mu = m_0 u^\mu$, where $m_0$ is the rest mass.
-    \item Invariant: $p^\mu p_\mu = -m_0^2c^2$.
+    \item Defined as $p = m_0 u$, where $m_0$ is the rest mass.
+    \item Invariant: $p \cdot p = m_0^2c^2$.
 \end{itemize}
 }
 
