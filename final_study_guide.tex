@@ -1,0 +1,272 @@
+\documentclass{article}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{physics}
+\usepackage{mathtools}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{siunitx}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{float}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=blue,
+    pdftitle={Modern Physics Final Study Guide},
+    pdfpagemode=FullScreen,
+}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyhead[L]{\leftmark} % put section name on the left
+\fancyhead[R]{\thepage} % page number on the right
+\renewcommand{\headrulewidth}{0.4pt} % horizontal line under header
+\renewcommand{\sectionmark}[1]{\markboth{\small#1}{}}
+
+% To handle the first page differently
+\fancypagestyle{plain}{
+    \fancyhf{} % clear all header and footer fields
+    \renewcommand{\headrulewidth}{0pt} % no line for first page
+}
+
+\onehalfspacing
+
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{angles,quotes,arrows.meta}
+
+\AtBeginDocument{\RenewCommandCopy\qty\SI}
+
+% Custom commands for consistent formatting
+\newcommand{\eqbox}[1]{\begin{tcolorbox}[colback=gray!10] #1 \end{tcolorbox}}
+\newcommand{\conceptbox}[1]{\begin{tcolorbox}[colback=blue!10] #1 \end{tcolorbox}}
+\newcommand{\tipbox}[1]{\begin{tcolorbox}[colback=green!10] #1 \end{tcolorbox}}
+\newcommand{\warningbox}[1]{\begin{tcolorbox}[colback=red!10] #1 \end{tcolorbox}}
+
+% Constants
+\newcommand{\planckconst}{6.626\times 10^{-34}\,\text{J}\cdot\text{s}}
+\newcommand{\redplanck}{1.055\times 10^{-34}\,\text{J}\cdot\text{s}}
+\newcommand{\electronmass}{9.11\times 10^{-31}\,\text{kg}}
+\newcommand{\lightspeed}{3.0\times 10^{8}\,\text{m}/\text{s}}
+\newcommand{\bohrradius}{0.0529\times 10^{-9}\,\text{m}}
+\newcommand{\stefan}{5.67\times10^{-8}\text{ W/m}^2\cdot K^4}
+\newcommand{\compton}{0.002426\text{ nm}}
+
+\title{Modern Physics Final Study Guide}
+\author{PHYS-122}
+\date{Fall 2024}
+
+\begin{document}
+\maketitle
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Special Relativity}
+
+\subsection{Key Concepts}
+\conceptbox{
+\begin{itemize}
+    \item Postulates: Laws of physics are the same in all inertial frames; the speed of light is constant in a vacuum for all observers.
+    \item Relativity of Simultaneity: two events that appear to happen at the same time for one observer may not appear simultaneous to another observer moving relative to the first.
+    \item Relativistic velocity addition: These problems generally have 3 objects: A stationary object and 2 moving objects. Notation is usually (or $u$ and $v$ reversed):
+    \begin{itemize}
+        \item $S$ = stationary frame
+        \item $S'$ = 2nd moving object reference frame
+        \item $v$ = velocity of 2nd object with respect to stationary frame
+        \item $u$ = velocity of 1st object with respect to stationary frame
+        \item $u'$ = velocity of 1st object with respect to 2nd object
+    \end{itemize}
+    \item Relativistic Conservation Laws:
+    \begin{itemize}
+        \item In an isolated system of particles, the relativistic total energy (kinetic energy plus rest energy) remains constant
+        \item In an isolated system of particles, the total linear momentum remains constant
+    \end{itemize}
+\end{itemize}
+}
+
+\subsection{Essential Equations}
+\eqbox{
+    \begin{itemize}
+        \item Time dilation: $\Delta t = \gamma \Delta t_0$, where $\gamma = 1/\sqrt{1 - v^2/c^2}$.
+        \item Length contraction: $L = L_0 \gamma^{-1} = L_0 \sqrt{1 - v^2/c^2}$.
+        \item Relativistic addition of velocities: $u' = \frac{u + v}{1 + uv/c^2}$.
+        \item Lorentz transformation (time):  $t' = \gamma(t - \frac{vx}{c^2})$
+        \item Lorentz transformation (space):  $x' = \gamma(x - vt)$
+        \item Doppler Shift:
+        \begin{itemize}
+            \item Redshift (receeding): $f_{obs} = \sqrt{\displaystyle\frac{1 - v/c}{1 + v/c}}f_{source}$ and $ \lambda_{obs} = \sqrt{\displaystyle\frac{1 + v/c}{1 - v/c}}\lambda_{source} $
+            \item Blueshift (approaching): $f_{obs} = \sqrt{\displaystyle\frac{1 + v/c}{1 - v/c}}f_{source}$ and $ \lambda_{obs} = \sqrt{\displaystyle\frac{1 - v/c}{1 + v/c}}\lambda_{source} $
+        \end{itemize} 
+        \item Kinetic energy: $KE = (\gamma - 1)m_0c^2$
+        \item Total energy:  $E = \gamma m_0c^2$
+        \item Energy-momentum relation: $E^2 = (pc)^2 + (m_0c^2)^2$.
+    \end{itemize}
+}
+
+\section{Early Quantum Theory and Quantum Mechanics}
+
+\subsection{Key Concepts}
+\conceptbox{
+\begin{itemize}
+    \item Blackbody radiation: Explained using Planck's quantum hypothesis $E = nhf$.
+    \item Photoelectric effect: Energy of emitted electrons depends on frequency, not intensity.
+    \item Wave-particle duality: Matter exhibits both particle and wave properties.
+    \item Schr\"odinger equation: Governs quantum mechanical behavior of particles.
+\end{itemize}
+}
+
+\subsection{Essential Equations}
+\eqbox{
+\begin{itemize}
+    \item Planck's law: $E = hf$
+    \item Photoelectric equation: $KE_{\text{max}} = hf - \phi$
+    \item De Broglie wavelength: $\lambda = \frac{h}{p}$
+    \item Schrödinger equation (time-independent): 
+    \[
+    -\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2} + V\psi = E\psi
+    \]
+    \item 3D Schrödinger equation (spherical coordinates):
+    \[
+    -\frac{\hbar^2}{2m} \nabla^2 \psi + V(r)\psi = E\psi
+    \]
+    where 
+    \[
+    \nabla^2 = \frac{1}{r^2} \frac{\partial}{\partial r} \left( r^2 \frac{\partial}{\partial r} \right) 
+    + \frac{1}{r^2 \sin\theta} \frac{\partial}{\partial \theta} \left( \sin\theta \frac{\partial}{\partial \theta} \right) 
+    + \frac{1}{r^2 \sin^2\theta} \frac{\partial^2}{\partial \phi^2}
+    \]
+    \item General solution to the wave function:
+    \[
+    \psi(r, \theta, \phi) = R(r) Y(\theta, \phi)
+    \]
+    where:
+    \begin{itemize}
+        \item $R(r)$: Radial part of the wave function, satisfying a differential equation dependent on the potential $V(r)$.
+        \item $Y(\theta, \phi)$: Angular part, given by spherical harmonics:
+        \[
+        Y_l^m(\theta, \phi) = (-1)^m \sqrt{\frac{(2l+1)(l-m)!}{4\pi (l+m)!}} P_l^m(\cos\theta)e^{im\phi}
+        \]
+        where $P_l^m$ are associated Legendre polynomials, and $l, m$ are quantum numbers.
+    \end{itemize}
+\end{itemize}
+}
+
+
+\section{Statistical Mechanics}
+
+\subsection{Key Concepts}
+\conceptbox{
+\begin{itemize}
+    \item Microstates and macrostates: Connection between microscopic and macroscopic descriptions.
+    \item Boltzmann distribution: $P_i = \frac{e^{-E_i/k_BT}}{Z}$.
+    \item Partition function: Summation of states to understand thermodynamic properties, $Z = \sum_i e^{-E_i/k_BT}$.
+    \item Occupation numbers: Average number of particles in a state, $n_i = \frac{1}{e^{(E_i-\mu)/k_BT} \pm 1}$ (for fermions and bosons).
+    \item Degeneracy: The number of microstates corresponding to a single energy level.
+    \item Distinguishable vs. indistinguishable particles: Boltzmann distribution for distinguishable particles; Fermi-Dirac and Bose-Einstein distributions for indistinguishable particles.
+\end{itemize}
+}
+
+\subsection{Essential Equations}
+\eqbox{
+\begin{align*}
+    &\text{Boltzmann distribution: } P_i = \frac{e^{-E_i/k_BT}}{Z} \\
+    &\text{Partition function: } Z = \sum_i g_i e^{-E_i/k_BT} \\
+    &\text{Fermi-Dirac distribution: } n_i = \frac{1}{e^{(E_i-\mu)/k_BT} + 1} \\
+    &\text{Bose-Einstein distribution: } n_i = \frac{1}{e^{(E_i-\mu)/k_BT} - 1} \\
+    &\text{Average energy: } \langle E \rangle = \sum_i P_i E_i = -\frac{\partial \ln Z}{\partial \beta} \\
+    &\text{Probability of a state: } P(E) = \frac{g_i e^{-E/k_BT}}{Z}
+\end{align*}
+}
+
+\subsection{Units and Unit Conversions}
+\tipbox{
+\begin{itemize}
+    \item Energy: $1 \text{ eV} = 1.602 \times 10^{-19} \text{ J}$.
+    \item Temperature: Convert between Kelvin and energy using $k_B = 1.38 \times 10^{-23} \text{ J/K}$.
+    \item Wavelength and frequency: $E = hf$, $\lambda = \frac{c}{f}$, with $hc = 1240 \text{ eV} \cdot \text{nm}$.
+\end{itemize}
+}
+
+\section{Quick Reference}
+
+\subsection{Mathematical Tools}
+\begin{itemize}
+    \tipbox{
+    \item Trigonometric Identities:
+    \begin{align*}
+        &\cos^2x = \frac{1 + \cos(2x)}{2} \\
+        &\sin^2x = \frac{1 - \cos(2x)}{2} \\
+        &\sin(2x) = 2\sin x\cos x
+    \end{align*}
+    }
+    \tipbox{
+    \item Series: 
+    \begin{itemize}
+        \item Taylor Series Expansion: $\displaystyle\sum_{n = 0}^{\infty} C_n(x-a)^n$ where $ C_n = \displaystyle\frac{f^{(n)}(a)}{n!} $
+        \item Binomial Series Expansion: $ (1 \pm x)^r = 1 \pm rx \pm ... $
+    \end{itemize}
+    }
+    \tipbox{
+    \item Integration Tips:
+    \begin{itemize}
+        \item For even functions: $\int_{-a}^a f(x)dx = 2\int_0^a f(x)dx$
+        \item For odd functions: $\int_{-a}^a f(x)dx = 0$
+        \item Gaussian integrals often appear in wave packets
+    \end{itemize}
+    }
+
+    \tipbox{
+    \item Complex Numbers Review
+    \begin{itemize}
+        \item Complex conjugate: $z^* = a - bi$ for $z = a + bi$
+        \item Modulus: $|z| = \sqrt{a^2 + b^2}$
+        \item Euler's formula: $e^{i\theta} = \cos\theta + i\sin\theta$
+        \item Argument: $\arg(z) = \tan^{-1}\left(\displaystyle\frac{y}{x}\right)$
+    \end{itemize}
+    }
+
+    \tipbox{
+        \item Second Order Differential Equations
+        \begin{itemize}
+            \item If ODE has this form: $\displaystyle\frac{d^2 f}{dx^2} = k^2 f$ where k is a constant
+
+            The solution is:
+            $$ f(x) = Ae^{kx} + Be^{-kx} $$
+        \end{itemize}
+    }
+\end{itemize}
+
+\subsection{Important Constants}
+\tipbox{
+\begin{itemize}
+    \item Stefan-Boltzmann constant: $\sigma = \stefan$
+    \item Planck's constant: $h = \planckconst = 4.136\times10^{-15}\text{ eV}\cdot\text{s}$
+    \item Reduced Planck's constant: $\hbar = \redplanck$
+    \item Electron mass: $m_e = \electronmass$
+    \item Speed of light: $c = \lightspeed$
+    \item Bohr radius: $a_0 = \bohrradius$
+    \item Compton wavelength of the electron: $\displaystyle\frac{h}{m_ec} = \compton$
+\end{itemize}
+}
+
+\subsection{Unit Conversions}
+\tipbox{
+\begin{itemize}
+    \item $1 \text{ eV} = 1.602 \times 10^{-19} \text{ J}$
+    \item $hc = 1240$ eV $\cdot$ nm
+    \item $\hbar c = \displaystyle\frac{1240}{2\pi}$ eV $\cdot$ nm
+\end{itemize}
+}
+
+\end{document}
