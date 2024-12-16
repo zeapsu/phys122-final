@@ -580,6 +580,7 @@ Velocities associated with wave propagation.
 
 \conceptbox{
 \textbf{Step Potential:}
+\eqbox{
 \[
 V(x) = 
 \begin{cases} 
@@ -587,6 +588,7 @@ V(x) =
 U_0, & x \geq 0 
 \end{cases}
 \]
+}
 The particle's behavior depends on whether its energy \( E \) is greater than or less than \( U_0 \).
 }
 
@@ -594,25 +596,31 @@ The particle's behavior depends on whether its energy \( E \) is greater than or
 \subsubsection*{Case 1: \( E > U_0 \)}
 
 \textbf{Wave Function Solutions:}
+\eqbox{
 \begin{itemize}
     \item \( x < 0 \): \( \psi(x) = Ae^{ik_0x} + Be^{-ik_0x}, \quad k_0 = \sqrt{\frac{2mE}{\hbar^2}} \)
     \item \( x \geq 0 \): \( \psi(x) = Ce^{ik_1x}, \quad k_1 = \sqrt{\frac{2m(E - U_0)}{\hbar^2}} \)
 \end{itemize}
+}
 
 \textbf{Reflection and Transmission Coefficients:}
+\eqbox{
 \[
 R = \left( \frac{k_0 - k_1}{k_0 + k_1} \right)^2, \quad T = \frac{4k_0k_1}{(k_0 + k_1)^2}, \quad R + T = 1
 \]
+}
 }
 
 
 \conceptbox{
 \subsubsection*{Case 2: \( E < U_0 \)}
 \textbf{Wave Function Solutions:}
+\eqbox{
 \begin{itemize}
     \item \( x < 0 \): \( \psi(x) = Ae^{ik_0x} + Be^{-ik_0x}, \quad k_0 = \sqrt{\frac{2mE}{\hbar^2}} \)
     \item \( x \geq 0 \): \( \psi(x) = De^{-\kappa x}, \quad \kappa = \sqrt{\frac{2m(U_0 - E)}{\hbar^2}} \)
 \end{itemize}
+}
 
 \textbf{Tunneling Insight:}
 The particle cannot propagate in the \( x \geq 0 \) region but has a finite probability of being found in the barrier due to tunneling.
@@ -806,49 +814,77 @@ The likelihood of finding a particle in a state with energy \( E_i \) depends on
 \end{itemize}
 }
 
-\subsection{Thermal Probability and Average Quantities}
+\subsection{Normalization Conditions}
 \conceptbox{
-\textbf{Thermal Probability:}
-The probability of finding a particle in a specific energy state depends on the Boltzmann factor:
-\eqbox{
-\[
-P(E) = \frac{e^{-E/k_BT}}{Z},
-\]
-}
-where \( Z = \sum e^{-E_i/k_BT} \) is the partition function.
-
-\textbf{Average Energy:}
-\eqbox{
-\[
-\langle E \rangle = -\frac{\partial \ln Z}{\partial \beta}, \quad \text{where } \beta = \frac{1}{k_BT}.
-\]
-}
-
 \textbf{Normalization Conditions:}
 \begin{itemize}
-    \item Total number of particles:
+    \item The total number of particles in the system:
     \eqbox{
     \[
-    \int f(E)g(E)dE = N.
+    N = \int f(E)g(E)dE,
     \]
     }
-    \item Total energy of the system:
+    where \( f(E) \) is the distribution function, and \( g(E) \) is the density of states.
+
+    \item The total energy of the system:
     \eqbox{
     \[
-    \int f(E)g(E)E\,dE = E_{\text{tot}}.
+    E_{\text{tot}} = \int f(E)g(E)E \, dE.
     \]
     }
 \end{itemize}
-
-\textbf{Energy Density for Photon Gas:}
-\eqbox{
-\[
-u(E)dE = \frac{8\pi}{(hc)^3} E^3 \frac{1}{e^{E/k_BT} - 1} dE.
-\]
 }
 
-\textbf{Degeneracy Pressure:}
-Arises due to the Pauli exclusion principle and prevents fermions from collapsing under compression, as seen in white dwarfs and neutron stars.
+\subsection{Maxwell-Boltzmann Distribution}
+\conceptbox{
+\textbf{Maxwell-Boltzmann Distribution:}
+Describes the distribution of particles in a system of distinguishable particles.
+
+\textbf{Degeneracy of States:}
+For an ideal monatomic gas:
+\eqbox{
+\[
+g(p)dp = 4\pi p^2 dp \to g(E)dE = 4\pi m \sqrt{2mE}dE
+\]
+}
+where:
+\begin{itemize}
+    \item \( m \): Particle mass.
+    \item \( E \): Energy of the particle.
+\end{itemize}
+
+\textbf{Key Properties:}
+\begin{itemize}
+    \item Valid for classical gases where quantum effects are negligible.
+    \item Particles are distinguishable.
+    \item No restriction on the number of particles in a given state.
+\end{itemize}
+
+\textbf{Applications:}
+Used to describe the behavior of ideal gases in classical thermodynamics and kinetic theory.
+}
+
+\subsection{Bose-Einstein Distribution}
+\conceptbox{
+\textbf{Bose-Einstein Distribution:}
+Describes indistinguishable bosons, such as photons, which can occupy the same quantum state.
+
+\textbf{Degeneracy of States for Bosons:}
+\eqbox{
+\[
+g(n)dn = \frac{1}{8}4\pi n^2 dn \to g(E)dE = \frac{\pi}{4 E_0^{3/2}}\sqrt E dE
+\]
+}
+where \( E_0 = \displaystyle\frac{\hbar^2 \pi^2}{2m L^2} \)
+
+\textbf{Key Properties:}
+\begin{itemize}
+    \item Bosons can occupy the same quantum state.
+    \item Leads to phenomena like Bose-Einstein condensation at low temperatures.
+\end{itemize}
+
+\textbf{Applications:}
+Used to describe systems like photons (blackbody radiation) and liquid helium (superfluidity).
 }
 
 \subsection{Bose-Einstein Condensation}
@@ -873,6 +909,45 @@ Occurs when a system of bosons is cooled below a critical temperature (\( T_c \)
     }
 \end{itemize}
 }
+
+\subsection{Fermi-Dirac Distribution}
+\conceptbox{
+\textbf{Fermi-Dirac Distribution:}
+Describes indistinguishable fermions (particles with half-integer spin) that obey the Pauli Exclusion Principle.
+
+\textbf{Degeneracy of States for Fermions:}
+\eqbox{
+\[
+g(E)dE = \frac{\pi}{4 E_0^{3/2}}\sqrt E dE = 8\sqrt{2}\pi \left(\frac{m^{3/2}V}{h^3}\right)\sqrt E dE
+\]
+}
+where:
+\begin{itemize}
+    \item \( V \): Volume of the system.
+    \item \( m \): Mass of the particle.
+    \item \(E_0 = \displaystyle\frac{h^2}{8mL^2}\)
+\end{itemize}
+
+\textbf{Key Properties:}
+\begin{itemize}
+    \item Fermions cannot occupy the same quantum state (Pauli Exclusion Principle).
+    \item At absolute zero, all states up to the Fermi energy (\( E_F \)) are occupied, while higher energy states are empty.
+    \begin{itemize}
+        \item The Fermi energy forms the boundary between occupied and unoccupied states
+        \item at \(T = 0\), all states with energies below \( E_F \) are occupied, and those above are not
+        \eqbox{
+            \[
+                E_F = \displaystyle\frac{h^2}{2m}\left(\displaystyle\frac{3N}{8\pi V}\right)^{2/3}
+            \]
+        }
+    \end{itemize}
+\end{itemize}
+
+\textbf{Applications:}
+Used to study electrons in metals, semiconductors, and the behavior of neutron stars.
+}
+
+
 
 \subsection{Degeneracy Pressure}
 \conceptbox{
