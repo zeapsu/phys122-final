@@ -90,6 +90,87 @@
 Two events that appear simultaneous to one observer may not appear simultaneous to another observer moving relative to the first. This is a direct consequence of the constancy of the speed of light and the Lorentz transformations.
 }
 
+\subsection{Galilean Relativity and Transformations}
+
+\subsubsection{Galilean Relativity}
+\conceptbox{
+\textbf{Galilean Relativity:}
+The principle of Galilean relativity states that the laws of mechanics are the same in all inertial frames of reference. No experiment conducted within a closed system can determine whether the system is at rest or moving with constant velocity.
+
+\textbf{Key Assumptions:}
+\begin{itemize}
+    \item Time is absolute: All observers measure the same time regardless of their motion.
+    \item Space is absolute: The distance between two points is the same in all inertial frames.
+    \item Velocities add linearly (classical velocity addition).
+\end{itemize}
+}
+
+\subsubsection{Galilean Transformations}
+\conceptbox{
+The Galilean transformations describe how coordinates change between two inertial reference frames \( S \) and \( S' \), where \( S' \) moves with a constant velocity \( v \) relative to \( S \) along the \( x \)-axis.
+
+\textbf{Transformations:}
+\eqbox{
+\[
+    x' = x - vt, \quad y' = y, \quad z' = z, \quad t' = t.
+\]
+}
+Here:
+\begin{itemize}
+    \item \( x, y, z, t \): Position and time in the stationary frame \( S \).
+    \item \( x', y', z', t' \): Position and time in the moving frame \( S' \).
+    \item \( v \): Relative velocity between \( S \) and \( S' \).
+\end{itemize}
+}
+
+\conceptbox{
+\textbf{Classical Velocity Addition:}
+The velocity of an object as observed in \( S' \) is related to its velocity in \( S \) by:
+\eqbox{
+\[
+    v' = v_{\text{object}} - v_{\text{frame}}.
+\]
+}
+This linear velocity addition assumes that velocities are simply additive without any limitations (e.g., no speed limit like the speed of light).
+}
+
+\subsubsection{Failures of Galilean Relativity}
+\conceptbox{
+\textbf{Key Failings of Galilean Relativity:}
+Galilean relativity is inconsistent with observations involving light and electromagnetism, leading to its replacement by Einstein's Special Relativity. The main issues include:
+
+\begin{enumerate}
+    \item \textbf{Failure to Explain the Constancy of Light Speed:}
+    \begin{itemize}
+        \item According to Maxwell's equations, the speed of light in a vacuum (\( c \)) is constant and does not depend on the motion of the observer or the source.
+        \item The Galilean velocity addition formula predicts that the speed of light would vary depending on the relative motion of the observer, which contradicts experimental evidence (e.g., the Michelson-Morley experiment).
+    \end{itemize}
+    
+    \item \textbf{Absolute Time and Space Assumptions:}
+    \begin{itemize}
+        \item Galilean relativity assumes that time flows uniformly for all observers (\( t = t' \)) and that space is the same in all frames.
+        \item Special Relativity shows that time and space are interconnected (spacetime), and both are affected by the observer's relative motion.
+    \end{itemize}
+
+    \item \textbf{No Concept of Lorentz Invariance:}
+    \begin{itemize}
+        \item The Galilean transformations preserve distances and times but do not preserve the invariant interval (\( \Delta s^2 \)) observed in Special Relativity.
+        \item Lorentz transformations, which replace Galilean transformations, ensure that the speed of light remains constant and that physical laws are the same in all inertial frames.
+    \end{itemize}
+\end{enumerate}
+}
+
+\conceptbox{
+\textbf{Conclusion:}
+The failures of Galilean relativity arise from its inability to reconcile classical mechanics with the behavior of light and electromagnetism. This led to the development of Special Relativity, where:
+\begin{itemize}
+    \item Space and time are relative and interdependent.
+    \item The speed of light (\( c \)) is constant in all inertial frames.
+    \item Lorentz transformations replace Galilean transformations to correctly describe spacetime.
+\end{itemize}
+}
+
+
 \subsection{Lorentz Transformations}
 
 \conceptbox{
@@ -238,11 +319,55 @@ a^\mu = (a^0, \vec{a}) = (a^0, a^1, a^2, a^3), \quad a^0 = c\Delta t
 The invariant dot product between two four-vectors \( a^\mu \) and \( b^\mu \) is:
 \eqbox{
 \[
-a \cdot b = a^0 b^0 - \vec{a} \cdot \vec{b}
+a \cdot b = a^0 b^0 - \vec{a} \cdot \vec{b}.
 \]
 }
 This quantity is Lorentz invariant (unchanged under Lorentz transformations).
+
+\textbf{Four-Position Dot Product:}
+The four-position vector \( x^\mu \) is defined as \( x^\mu = (ct, \vec{x}) \), where \( t \) is time and \( \vec{x} \) is the spatial position. The dot product of \( x^\mu \) with itself gives the invariant interval:
+\eqbox{
+\[
+x \cdot x = (ct)^2 - |\vec{x}|^2.
+\]
 }
+
+\textbf{Four-Velocity Dot Product:}
+The four-velocity vector \( u^\mu \) is defined as:
+\eqbox{
+\[
+u^\mu = \frac{dx^\mu}{d\tau} = \gamma (c, \vec{v}),
+\]
+}
+where \( \gamma = \frac{1}{\sqrt{1 - v^2/c^2}} \) is the Lorentz factor. The dot product of the four-velocity with itself is invariant and equals \( c^2 \):
+\eqbox{
+\[
+u \cdot u = u^\mu u_\mu = c^2.
+\]
+}
+
+\textbf{Four-Momentum Dot Product:}
+The four-momentum vector \( p^\mu \) is defined as:
+\eqbox{
+\[
+p^\mu = m u^\mu = \gamma m (c, \vec{v}),
+\]
+}
+where \( m \) is the particle's rest mass. The dot product of the four-momentum vector with itself gives:
+\eqbox{
+\[
+p \cdot p = p^\mu p_\mu = m^2 c^2.
+\]
+}
+For massless particles, such as photons, \( p \cdot p = 0 \).
+
+\textbf{Key Insights:}
+\begin{itemize}
+    \item The dot product between four-vectors remains invariant under Lorentz transformations, reflecting the relativistic consistency of spacetime intervals and physical quantities.
+    \item The four-velocity and four-momentum vectors provide a direct link between classical mechanics and relativistic dynamics.
+\end{itemize}
+}
+
 
 \subsection{Examples of Four-Vectors}
 \conceptbox{
@@ -275,7 +400,7 @@ This quantity is Lorentz invariant (unchanged under Lorentz transformations).
 \end{itemize}
 }
 
-\subsection{Relativistic Conservation Laws}
+\subsection{Relativistic Dynamics and Conservation Laws}
 
 \conceptbox{
 \textbf{Relativistic Conservation Laws:}
@@ -284,16 +409,25 @@ The principles of conservation of energy and momentum extend to special relativi
 
 \conceptbox{
     \textbf{Relativistic Total Energy:}
-    \begin{itemize}
-        \item The total energy \( E \) includes both the rest energy and the relativistic kinetic energy:
-        \eqbox{
+    The total energy \( E \) includes both the rest energy and the relativistic kinetic energy:
+    \eqbox{
+    \[
+    E_{tot} = \gamma m_0 c^2.
+    \]
+    }
+    \textbf{Relativistic Kinetic Energy:} 
+    The kinetic energy is given by
+    \eqbox{
         \[
-        E = \gamma m_0 c^2.
+            KE = (\gamma - 1)m_0c^2
         \]
-        }
-        \item The rest energy is given by \( E_0 = m_0 c^2 \), where \( m_0 \) is the rest mass.
-        \item In any physical process, the total energy is conserved.
-    \end{itemize}
+    }
+    \textbf{Rest Energy:}
+    The rest energy is given by
+    \eqbox{\[ E_0 = m_0 c^2 \]} where \( m_0 \) is the rest mass.
+    \vspace{1em}
+
+    In any physical process, the total energy is conserved.
 }
 \conceptbox{
     \textbf{Relativistic Momentum:}
@@ -443,6 +577,24 @@ The photoelectric effect describes the emission of electrons from a material whe
 }
 
 \conceptbox{
+\textbf{Photoelectric Effect: Classical Predictions vs. Experimental Results}
+\vspace{0.2cm}
+\small
+\begin{center}
+\renewcommand{\arraystretch}{1.2} % Adjust row spacing
+\begin{tabular}{|p{2.8cm}|p{5cm}|p{5cm}|}
+\hline
+\textbf{Aspect} & \textbf{Classical Prediction} & \textbf{Experimental Result} \\\hline
+\textbf{Dependence on Intensity} & Increasing light intensity increases electron energy. & Electron energy is independent of intensity; only the number of electrons increases. \\\hline
+\textbf{Dependence on Frequency} & Electron emission occurs at any frequency with enough intensity. & Electrons are emitted only if frequency exceeds a threshold \( f_c \). \\\hline
+\textbf{Energy of Emitted Electrons} & Energy of electrons depends on light intensity. & Electron energy depends linearly on light frequency: \( KE_{\text{max}} = hf - \phi \). \\\hline
+\textbf{Time Delay} & Emission occurs after measurable delay for low-intensity light. & Electrons are emitted instantaneously, regardless of light intensity. \\\hline
+\end{tabular}
+\end{center}
+\normalsize
+}
+
+\conceptbox{
 \textbf{Einstein's Photoelectric Equation:}
 The energy of the incident photons is used to overcome the work function (\( \phi \)) of the material and provide the kinetic energy (\( KE_{max} \)) to the ejected electrons:
 \eqbox{
@@ -575,6 +727,64 @@ where:
     \item Used in X-ray and gamma-ray spectroscopy to study material properties.
     \item Plays a key role in medical imaging techniques such as Compton scattering tomography.
     \item Foundational to understanding photon interactions in particle physics and astrophysics.
+\end{itemize}
+}
+
+\subsubsection{Absorption and Emission Spectrum}
+\conceptbox{
+\textbf{Absorption and Emission Spectrum:}
+Atoms interact with light through the absorption or emission of photons. This process leads to the formation of distinct spectra that depend on the energy differences between the quantized energy levels of the atom.
+
+\textbf{Key Concepts:}
+\begin{itemize}
+    \item \textbf{Absorption Spectrum:}
+    When light passes through a gas, atoms absorb photons of specific energies corresponding to transitions between lower and higher energy levels. The resulting spectrum shows dark lines at these wavelengths against a continuous background.
+    \item \textbf{Emission Spectrum:}
+    Excited atoms release energy by emitting photons as electrons transition from higher to lower energy levels. The emitted light forms bright lines at specific wavelengths.
+\end{itemize}
+}
+
+\conceptbox{
+\textbf{Energy of a Photon:}
+The energy difference between two levels determines the energy (and wavelength) of absorbed or emitted photons:
+\eqbox{
+\[
+E_{\text{photon}} = hf = \frac{hc}{\lambda} = E_i - E_f,
+\]
+}
+where:
+\begin{itemize}
+    \item \( E_{\text{photon}} \): Energy of the photon.
+    \item \( E_i \): Energy of the initial (higher) state.
+    \item \( E_f \): Energy of the final (lower) state.
+    \item \( \lambda \): Wavelength of the absorbed/emitted light.
+    \item \( h \): Planck's constant, \( c \): Speed of light.
+\end{itemize}
+}
+
+\conceptbox{
+\textbf{Hydrogen Atom Spectrum:}
+For hydrogen, the energy levels are given by:
+\eqbox{
+\[
+E_n = -\frac{13.6 \, \text{eV}}{n^2}, \quad n = 1, 2, 3, \dots
+\]
+}
+\textbf{Spectral Series:}
+The transitions between energy levels produce specific series in the hydrogen spectrum:
+\begin{itemize}
+    \item \textbf{Lyman Series:} \( n_f = 1 \), transitions in the ultraviolet range.
+    \item \textbf{Balmer Series:} \( n_f = 2 \), transitions in the visible range.
+    \item \textbf{Paschen Series:} \( n_f = 3 \), transitions in the infrared range.
+\end{itemize}
+}
+
+\conceptbox{
+\textbf{Key Observations:}
+\begin{itemize}
+    \item Absorption spectra are unique to each element and are used in spectroscopy to identify substances.
+    \item Emission spectra arise from electron transitions and are used to study excited atoms and astrophysical objects.
+    \item The energy and wavelength of absorbed/emitted photons provide direct evidence for quantized energy levels in atoms.
 \end{itemize}
 }
 
