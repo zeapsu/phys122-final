@@ -12,6 +12,7 @@
 \usepackage{tikz}
 \usepackage{pgfplots}
 \usepackage{float}
+\usepackage{multicol}
 
 \usepackage{hyperref}
 \hypersetup{
@@ -358,49 +359,225 @@ This invariant magnitude holds in all inertial frames, ensuring the consistency 
 
 \subsection{Quantum Theory of Light}
 
-\subsubsection{Blackbody Radiation and Planck Hypothesis}
+\subsubsection{Blackbody Radiation}
+
 \conceptbox{
-\textbf{Blackbody Radiation:} 
-Classical physics predicted the "ultraviolet catastrophe," where energy radiated at high frequencies diverged. Planck resolved this by quantizing energy:
+\textbf{Blackbody Radiation:}
+A blackbody is an idealized object that absorbs all incident electromagnetic radiation and re-emits it as a function of its temperature. The spectral intensity of radiation emitted by a blackbody is described by Planck's Law.
+}
+
+\conceptbox{
+\textbf{Key Challenge:}
+Classical physics predicted the "ultraviolet catastrophe," where energy radiated at high frequencies diverged. Planck resolved this by introducing the concept of quantized energy:
 \eqbox{
 \[
 E = nhf, \quad n = 1, 2, 3, \dots
-\]}
-\textbf{Planck's Law:}
-\eqbox{
-\[
-I(\nu, T) = \frac{8\pi h\nu^3}{c^3}\frac{1}{e^{h\nu/k_BT} - 1},
 \]
 }
-where \( I(\nu, T) \) is the intensity of radiation at frequency \( \nu \).
+This assumption restricted the energy of oscillators to discrete levels, successfully explaining blackbody radiation.
+}
+
+\conceptbox{
+\textbf{Planck's Law:}
+Describes the spectral radiance of a blackbody at a given temperature \( T \):
+\eqbox{
+\[
+I(\lambda, T) = \frac{2\pi hc^2}{\lambda^5}\frac{1}{e^{hc/\lambda k_BT} - 1}, \quad I(f, T) = \frac{8 \pi h f^3}{c^3}\frac{1}{e^{hf/k_BT} - 1}.
+\]
+}
+Here:
+\begin{itemize}
+    \item \( I(\lambda, T) \): Intensity as a function of wavelength \( \lambda \).
+    \item \( I(f, T) \): Intensity as a function of frequency \( f \).
+    \item \( h \): Planck's constant.
+    \item \( c \): Speed of light.
+    \item \( k_B \): Boltzmann constant.
+\end{itemize}
+}
+
+\conceptbox{
+\textbf{Stefan-Boltzmann Law:}
+The total power radiated per unit area of a blackbody is proportional to the fourth power of its absolute temperature:
+\eqbox{
+\[
+P = \sigma T^4, \quad \sigma = \frac{2\pi^5 k_B^4}{15c^2h^3} \approx 5.67 \times 10^{-8} \, \text{W/m}^2\cdot \text{K}^4.
+\]
+}
+Here:
+\begin{itemize}
+    \item \( P \): Power per unit area emitted by the blackbody.
+    \item \( \sigma \): Stefan-Boltzmann constant.
+\end{itemize}
+}
+
+\conceptbox{
+\textbf{Wien's Displacement Law:}
+The wavelength \( \lambda_{\text{max}} \) at which the blackbody radiation is most intense is inversely proportional to the temperature:
+\eqbox{
+\[
+\lambda_{\text{max}} = \frac{b}{T}, \quad b \approx 2.897 \times 10^{-3} \, \text{m} \cdot \text{K}.
+\]
+}
+Here:
+\begin{itemize}
+    \item \( \lambda_{\text{max}} \): Wavelength at peak intensity.
+    \item \( T \): Absolute temperature.
+    \item \( b \): Wien's constant.
+\end{itemize}
+}
+
+\conceptbox{
+\textbf{Key Insights:}
+\begin{itemize}
+    \item Planck's quantization hypothesis was a pivotal step toward quantum mechanics.
+    \item The Stefan-Boltzmann law integrates Planck's law over all wavelengths to find total radiated power.
+    \item Wien's displacement law helps identify the peak emission wavelength of a blackbody at a given temperature.
+\end{itemize}
 }
 
 \subsubsection{Photoelectric Effect}
+
 \conceptbox{
 \textbf{Photoelectric Effect:}
-Electrons are emitted from a material when light shines on it, with the energy of the electrons depending on the frequency of light.
-\eqbox{
-\[
-hf = \phi + KE_{max}, \quad hf_c = \phi, \quad KE_{max} = eV_s
-\]}
-\textbf{Threshold Frequency:} No electrons are emitted if \( f < f_c \).
+The photoelectric effect describes the emission of electrons from a material when light of sufficient frequency shines on it. The energy of the emitted electrons depends on the frequency of the light, not its intensity, providing evidence for the particle-like nature of light.
 }
 
-\subsubsection{Compton Scattering}
 \conceptbox{
-\textbf{Compton Scattering:}
-The scattering of X-rays by electrons demonstrates particle-like behavior of light. The wavelength shift is given by:
+\textbf{Einstein's Photoelectric Equation:}
+The energy of the incident photons is used to overcome the work function (\( \phi \)) of the material and provide the kinetic energy (\( KE_{max} \)) to the ejected electrons:
 \eqbox{
 \[
-\lambda' - \lambda = \frac{h}{m_ec}(1 - \cos\theta).
-\]}
-\textbf{Energy Relation:}
-\eqbox{
-\[
-\frac{1}{E'} - \frac{1}{E} = \frac{1 - \cos\theta}{m_ec^2}.
+hf = \phi + KE_{max},
 \]
 }
+where:
+\begin{itemize}
+    \item \( h \): Planck's constant.
+    \item \( f \): Frequency of the incident light.
+    \item \( \phi \): Work function (minimum energy needed to eject an electron).
+    \item \( KE_{max} \): Maximum kinetic energy of the emitted electron.
+\end{itemize}
 }
+
+\conceptbox{
+\textbf{Threshold Frequency:}
+Electrons are only emitted if the frequency of light \( f \) exceeds the threshold frequency \( f_c \):
+\eqbox{
+\[
+hf_c = \phi.
+\]
+}
+If \( f < f_c \), no electrons are emitted regardless of the light's intensity.
+}
+
+\conceptbox{
+\textbf{Stopping Potential:}
+To measure \( KE_{max} \), a stopping potential \( V_s \) is applied to halt the emitted electrons:
+\eqbox{
+\[
+KE_{max} = eV_s,
+\]
+}
+where \( e \) is the elementary charge.
+}
+
+\conceptbox{
+\textbf{Key Observations:}
+\begin{itemize}
+    \item The kinetic energy of emitted electrons depends on the light's frequency, not its intensity.
+    \item There is a threshold frequency below which no electrons are emitted.
+    \item Increasing light intensity increases the number of emitted electrons but not their kinetic energy.
+    \item The stopping potential is independent of light intensity and depends solely on \( KE_{max} \).
+\end{itemize}
+}
+
+\conceptbox{
+\textbf{Experimental Verification:}
+The photoelectric effect was experimentally validated by observing:
+\begin{itemize}
+    \item The emission of electrons from metals when illuminated by ultraviolet light.
+    \item A linear relationship between the frequency of light and \( KE_{max} \).
+\end{itemize}
+This experiment strongly supported Einstein's photon theory of light, which extended Planck's quantization hypothesis to all electromagnetic radiation.
+}
+
+\conceptbox{
+\textbf{Applications:}
+\begin{itemize}
+    \item Photoelectric cells (e.g., solar panels) convert light into electricity.
+    \item Light sensors and detectors in various scientific instruments.
+    \item Validation of quantum theory and photon-based models of light.
+\end{itemize}
+}
+\newpage
+\subsubsection{Compton Scattering}
+
+\conceptbox{
+\textbf{Compton Scattering:}
+Compton scattering describes the interaction between high-energy photons (e.g., X-rays) and electrons, leading to a measurable change in the photon's wavelength. This phenomenon provides strong evidence for the particle-like properties of light.
+}
+
+\conceptbox{
+\textbf{Compton Wavelength Shift:}
+The change in the wavelength of the photon after scattering is given by:
+\eqbox{
+\[
+\lambda' - \lambda = \frac{h}{m_ec}(1 - \cos\theta),
+\]
+}
+where:
+\begin{itemize}
+    \item \( \lambda \): Initial wavelength of the photon.
+    \item \( \lambda' \): Wavelength of the scattered photon.
+    \item \( h \): Planck's constant.
+    \item \( m_e \): Mass of the electron.
+    \item \( c \): Speed of light.
+    \item \( \theta \): Angle of scattering (angle between the initial and scattered photon).
+\end{itemize}
+}
+
+\conceptbox{
+\textbf{Energy Relation:}
+The relationship between the photon's initial and final energies is:
+\eqbox{
+\[
+\frac{1}{E'} - \frac{1}{E} = \frac{1 - \cos\theta}{m_ec^2},
+\]
+}
+where:
+\begin{itemize}
+    \item \( E \): Initial photon energy (\( E = hf \)).
+    \item \( E' \): Energy of the scattered photon.
+    \item \( m_ec^2 \): Rest energy of the electron.
+\end{itemize}
+}
+
+\conceptbox{
+\textbf{Key Observations:}
+\begin{itemize}
+    \item The scattered photon has lower energy and longer wavelength than the incident photon, consistent with energy conservation.
+    \item The shift in wavelength depends only on the scattering angle \( \theta \) and fundamental constants, not the material or initial photon energy.
+    \item Demonstrates that photons carry momentum, supporting their particle-like nature.
+\end{itemize}
+}
+
+\conceptbox{
+\textbf{Experimental Verification:}
+\begin{itemize}
+    \item Arthur Compton's experiments in 1923 confirmed the theoretical prediction of the wavelength shift.
+    \item Results agreed precisely with the derived equation for the Compton wavelength shift, providing strong evidence for quantum theory.
+\end{itemize}
+}
+
+\conceptbox{
+\textbf{Applications:}
+\begin{itemize}
+    \item Used in X-ray and gamma-ray spectroscopy to study material properties.
+    \item Plays a key role in medical imaging techniques such as Compton scattering tomography.
+    \item Foundational to understanding photon interactions in particle physics and astrophysics.
+\end{itemize}
+}
+
 \newpage
 \subsubsection{Wave-Particle Duality}
 
@@ -477,26 +654,87 @@ where \( \langle A \rangle \) is the expectation value, and \( \langle A^2 \rang
 }
 
 \subsubsection{Group and Phase Velocities}
+
 \conceptbox{
 \textbf{Group and Phase Velocities:}
-Velocities associated with wave propagation.
+These describe two distinct velocities associated with wave propagation. While group velocity represents the speed of the overall wave packet (and the particle), phase velocity corresponds to the speed of individual wave crests.
+}
+
+\conceptbox{
+\textbf{Group Velocity (\( v_g \)):}
+The velocity of the wave packet, which often represents the velocity of energy or information transfer. It is defined as:
+\eqbox{
+\[
+v_g = \frac{d\omega}{dk},
+\]
+}
+where:
 \begin{itemize}
-    \item Group velocity:
-    \eqbox{
-    \[
-    v_g = \frac{d\omega}{dk},
-    \]
-    }
-    representing the velocity of the wave packet \textbf{and the velocity of the particle}
-    \item Phase velocity:
-    \eqbox{
-    \[
-    v_p = \frac{\omega}{k},
-    \]
-    }
-    representing the velocity of individual wave crests.
+    \item \( \omega \): Angular frequency of the wave.
+    \item \( k \): Wave number (\( k = 2\pi/\lambda \)).
+\end{itemize}
+\textbf{Key Features:}
+\begin{itemize}
+    \item For non-dispersive media (constant \( v \)), \( v_g = v_p \).
+    \item In quantum mechanics, \( v_g \) is often associated with the particle's velocity.
+    \item Relevant for wave packets, where multiple frequencies combine to form a localized pulse.
 \end{itemize}
 }
+
+\conceptbox{
+\textbf{Phase Velocity (\( v_p \)):}
+The velocity of individual wave crests, which is distinct from the velocity of the overall wave packet. It is defined as:
+\eqbox{
+\[
+v_p = \frac{\omega}{k},
+\]
+}
+where:
+\begin{itemize}
+    \item \( \omega \): Angular frequency.
+    \item \( k \): Wave number.
+\end{itemize}
+\textbf{Key Features:}
+\begin{itemize}
+    \item \( v_p \) can exceed the speed of light (\( c \)) in certain media without violating causality.
+    \item Represents the velocity of harmonic waves in a wave train.
+    \item In dispersive media, \( v_p \neq v_g \).
+\end{itemize}
+}
+
+\conceptbox{
+\textbf{Relation Between Group and Phase Velocities:}
+In dispersive media, the group velocity depends on the phase velocity:
+\eqbox{
+\[
+v_g = v_p - \lambda \frac{dv_p}{d\lambda},
+\]
+}
+where:
+\begin{itemize}
+    \item \( \lambda \): Wavelength of the wave.
+    \item \( \frac{dv_p}{d\lambda} \): Rate of change of phase velocity with respect to wavelength.
+\end{itemize}
+}
+
+\conceptbox{
+\textbf{Key Observations:}
+\begin{itemize}
+    \item \( v_g \) is the velocity of energy or particle propagation, making it more relevant for physical phenomena.
+    \item \( v_p \) can provide insights into the nature of wave propagation in a medium.
+    \item The relationship between \( v_g \) and \( v_p \) becomes significant in understanding wave dispersion.
+\end{itemize}
+}
+
+\conceptbox{
+\textbf{Applications:}
+\begin{itemize}
+    \item Group velocity is crucial in quantum mechanics for describing particle motion through the de Broglie wavelength.
+    \item Phase velocity plays a role in characterizing electromagnetic waves in media, including fiber optics and plasma physics.
+    \item Both are essential for understanding dispersion in waves, which occurs in optics, acoustics, and quantum systems.
+\end{itemize}
+}
+
 
 
 \subsection{Schrödinger Equation}
@@ -525,6 +763,31 @@ Velocities associated with wave propagation.
     where \( Y(\theta, \phi) \) are spherical harmonics.
 \end{itemize}
 }
+
+\subsubsection{Normalization of the Wave Function}
+\conceptbox{
+\textbf{Normalization Condition:}
+The probability of finding a particle in the entire space must be equal to 1. The wave function \( \psi(x) \) (or \( \psi(r, \theta, \phi) \) in 3D) is normalized if:
+\eqbox{
+\[
+\int_{-\infty}^\infty |\psi(x)|^2 dx = 1 \quad \text{(1D)} \quad \text{or} \quad \int |\psi(r, \theta, \phi)|^2 d\tau = 1 \quad \text{(3D)}.
+\]
+}
+Here:
+\begin{itemize}
+    \item \( |\psi(x)|^2 \) is the probability density in 1D.
+    \item \( |\psi(r, \theta, \phi)|^2 \) is the probability density in 3D.
+    \item \( d\tau = r^2 \sin\theta \, dr \, d\theta \, d\phi \) is the volume element in spherical coordinates.
+\end{itemize}
+
+\textbf{Key Insight:}
+If the wave function is not normalized, it can be normalized by multiplying it by a constant \( A \), such that:
+\eqbox{
+\[
+\psi_{\text{norm}}(x) = A\psi(x), \quad A = \frac{1}{\sqrt{\int |\psi(x)|^2 dx}}.
+\]}
+}
+
 
 \subsubsection{Different Potentials}
 \conceptbox{
@@ -966,70 +1229,171 @@ P \propto \left(\frac{\hbar^2}{m}\right)\left(\frac{N}{V}\right)^{5/3}.
 
 \section{Quick Reference}
 
-\subsection{Functions and Equations}
+
+\subsection{Summary of Equations}
+
 \begin{itemize}
     \tipbox{
     \textbf{Special Relativity:}
-    \begin{itemize}
-        \item \textbf{Time Dilation:} \(\Delta t = \gamma \Delta t_0\), where \(\gamma = \frac{1}{\sqrt{1 - v^2/c^2}}\).
-        \item \textbf{Length Contraction:} \(L = L_0 \sqrt{1 - v^2/c^2}\).
-        \item \textbf{Relativistic Velocity Addition:} \(u' = \frac{u + v}{1 + uv/c^2}\).
-        \item \textbf{Invariant Interval:} \(\Delta s^2 = (c\Delta t)^2 - (\Delta x)^2 - (\Delta y)^2 - (\Delta z)^2\).
-        \item \textbf{Energy-Momentum Relation:} \(E^2 = (pc)^2 + (m_0c^2)^2\).
-        \item \textbf{Four-Momentum Conservation:} \(\sum p^\mu_{\text{initial}} = \sum p^\mu_{\text{final}}\).
-    \end{itemize}
+    \item Time Dilation: 
+    \[
+    \Delta t = \gamma \Delta t_0, \quad \gamma = \frac{1}{\sqrt{1 - v^2/c^2}}
+    \]
+    \item Length Contraction:
+    \[
+    L = L_0 \sqrt{1 - v^2/c^2}
+    \]
+    \item Relativistic Velocity Addition:
+    \[
+    u' = \frac{u + v}{1 + uv/c^2}
+    \]
+    \item Invariant Interval:
+    \[
+    \Delta s^2 = (c\Delta t)^2 - (\Delta x)^2 - (\Delta y)^2 - (\Delta z)^2
+    \]
+    \item Energy-Momentum Relation:
+    \[
+    E^2 = (pc)^2 + (m_0c^2)^2
+    \]
+    \item Four-Momentum Conservation:
+    \[
+    \sum p^\mu_{\text{initial}} = \sum p^\mu_{\text{final}}
+    \]
     }
-    
+
     \tipbox{
-    \textbf{Quantum Theory of Light:}
-    \begin{itemize}
-        \item \textbf{Planck's Law:} \(I(\nu, T) = \frac{8\pi h\nu^3}{c^3}\frac{1}{e^{h\nu/k_BT} - 1}\).
-        \item \textbf{Einstein's Photoelectric Equation:} \(hf = \phi + KE_{max}\).
-        \item \textbf{Compton Wavelength Shift:} \(\lambda' - \lambda = \frac{h}{m_ec}(1 - \cos\theta)\).
-        \item \textbf{De Broglie Wavelength:} \(\lambda = \frac{h}{p} = \frac{h}{mv}\).
-        \item \textbf{Wave Number:} \(k = \frac{2\pi}{\lambda}\).
-    \end{itemize}
+    \textbf{Quantum Theory of Light: }
+    \item Planck's Law:
+    \[
+    I(\lambda, T) = \frac{2\pi hc^2}{\lambda^5}\frac{1}{e^{hc/\lambda kT} - 1}
+    \]
+    \item Einstein's Photoelectric Equation:
+    \[
+    hf = \phi + KE_{max}
+    \]
+    \item Threshold Frequency:
+    \[
+    hf_c = \phi
+    \]
+    \item Stopping Potential:
+    \[
+    KE_{max} = eV_s
+    \]
+    \item Compton Wavelength Shift:
+    \[
+    \lambda' - \lambda = \frac{h}{m_ec}(1 - \cos\theta)
+    \]
+    \item Energy Relation in Compton Scattering:
+    \[
+    \frac{1}{E'} - \frac{1}{E} = \frac{1 - \cos\theta}{m_ec^2}
+    \]
+    \item De Broglie Wavelength:
+    \[
+    \lambda = \frac{h}{p} = \frac{h}{mv}
+    \]
+    \item Wave Number:
+    \[
+    k = \frac{2\pi}{\lambda}
+    \]
     }
-    
+
     \tipbox{
-    \textbf{Heisenberg Uncertainty Principles:}
-    \begin{itemize}
-        \item \textbf{Position-Momentum Uncertainty:} \(\Delta x \Delta p \geq \frac{\hbar}{2}\).
-        \item \textbf{Energy-Time Uncertainty:} \(\Delta E \Delta t \geq \frac{\hbar}{2}\).
-        \item \textbf{Variance-Squared Average Relationship:} \(\Delta A = \sqrt{\langle A^2 \rangle - \langle A \rangle^2}\).
-    \end{itemize}
+    \textbf{Heisenberg Uncertainty Principle: }
+    \item Position-Momentum Uncertainty:
+    \[
+    \Delta x \Delta p \geq \frac{\hbar}{2}
+    \]
+    \item Energy-Time Uncertainty:
+    \[
+    \Delta E \Delta t \geq \frac{\hbar}{2}
+    \]
+    \item Variance-Squared Average Relationship:
+    \[
+    \Delta A = \sqrt{\langle A^2 \rangle - \langle A \rangle^2}
+    \]
     }
-    
+
     \tipbox{
-    \textbf{Schrödinger Equation:}
-    \begin{itemize}
-        \item \textbf{1D Time-Independent:} \(-\frac{\hbar^2}{2m} \frac{d^2\psi(x)}{dx^2} + V(x)\psi(x) = E\psi(x)\).
-        \item \textbf{3D Schrödinger (Spherical):} \(-\frac{\hbar^2}{2m} \nabla^2 \psi(r, \theta, \phi) + V(r)\psi(r, \theta, \phi) = E\psi(r, \theta, \phi)\).
-        \item \textbf{Particle in a Box Energy Levels:} \(E_n = \frac{n^2\pi^2\hbar^2}{2mL^2}\).
-        \item \textbf{Step Potential Coefficients:}
-        \[
-        R = \left(\frac{k_0 - k_1}{k_0 + k_1}\right)^2, \quad T = \frac{4k_0k_1}{(k_0 + k_1)^2}.
-        \]
-    \end{itemize}
+    \textbf{Schrödinger Equation: }
+    \item 1D Time-Independent Schrödinger Equation:
+    \[
+    -\frac{\hbar^2}{2m} \frac{d^2\psi(x)}{dx^2} + V(x)\psi(x) = E\psi(x)
+    \]
+    \item 3D Schrödinger Equation (Spherical Coordinates):
+    \[
+    -\frac{\hbar^2}{2m} \nabla^2 \psi(r, \theta, \phi) + V(r)\psi(r, \theta, \phi) = E\psi(r, \theta, \phi)
+    \]
+    \item Wave function Normalization:
+    \[
+    \psi_{\text{norm}}(x) = A\psi(x), \quad A = \frac{1}{\sqrt{\int |\psi(x)|^2 dx}}.
+    \]
+    \item Particle in a Box Wave Function Normalized Solution 1D:
+    \[
+    \psi_n(x) = \sqrt{\displaystyle\frac{2}{L}} \sin(\displaystyle\frac{n\pi x}{L})
+    \]
+    \item Particle in a Box Wave Function Normalized Solution 3D:
+    \[
+    \psi_{n_1, n_2, n_3}(x, y, z) = \left(\displaystyle\frac{2}{L}\right)^{3/2}\sin(\displaystyle\frac{n_1\pi x}{L})\sin(\displaystyle\frac{n_2\pi y}{L})\sin(\displaystyle\frac{n_3\pi z}{L})
+    \]
+    \item Particle in a Box Energy Levels 1D:
+    \[
+    E_n = \frac{n^2\pi^2\hbar^2}{2mL^2}
+    \]
+    \item Particle in a Box Energy Levels 3D:
+    \[
+    E_{n_1, n_2, n_3} = \frac{\pi^2\hbar^2}{2mL^2}(n_1^2 + n_2^2 + n_3^2)
+    \]
+    \item Step Potential Reflection and Transmission Coefficients:
+    \[
+    R = \left(\frac{k_0 - k_1}{k_0 + k_1}\right)^2, \quad T = \frac{4k_0k_1}{(k_0 + k_1)^2}
+    \]
     }
-    
+
     \tipbox{
-    \textbf{Statistical Mechanics:}
-    \begin{itemize}
-        \item \textbf{Boltzmann Factor:} \(P(E) = \frac{e^{-E/k_BT}}{Z}\), where \(Z = \sum e^{-E_i/k_BT}\).
-        \item \textbf{Maxwell-Boltzmann Distribution:} \(f_{MB}(E) = Ae^{-E/kT}\).
-        \item \textbf{Bose-Einstein Distribution:} \(f_{BE}(E) = \frac{1}{e^{(E-\mu)/k_BT} - 1}\).
-        \item \textbf{Fermi-Dirac Distribution:} \(f_{FD}(E) = \frac{1}{e^{(E-\mu)/k_BT} + 1}\).
-        \item \textbf{Degeneracy of States (Monatomic Gas):} \(g(E)dE = 4\pi m \sqrt{2mE}dE\).
-        \item \textbf{Occupation Number:} \(n(E)dE = f(E)g(E)dE\).
-        \item \textbf{Bose-Einstein Condensation:}
-        \[
-        T_c = \left(\frac{h^2}{2\pi mk}\right) \left(\frac{N}{V\zeta(3/2)}\right)^{2/3}, \quad \frac{N_0}{N} = 1 - \left(\frac{T}{T_c}\right)^{3/2}.
-        \]
-        \item \textbf{Fermi Energy:} \(E_F = \frac{h^2}{2m}\left(\frac{3N}{8\pi V}\right)^{2/3}\).
-    \end{itemize}
+    \textbf{Statistical Mechanics: }
+    \item Maxwell-Boltzmann Distribution:
+    \[
+    f_{MB}(E) = Ae^{-E/kT}
+    \]
+    \item Bose-Einstein Distribution:
+    \[
+    f_{BE}(E) = \frac{1}{e^\alpha e^{E/kT} - 1}
+    \]
+    \item Fermi-Dirac Distribution:
+    \[
+    f_{FD}(E) = \frac{1}{e^\alpha e^{E/kT} + 1}
+    \]
+    \item Occupation Number:
+    \[
+    n(E)dE = f(E)g(E)dE
+    \]
+    \item Critical Temperature for Bose-Einstein Condensation:
+    \[
+    T_c = \left(\frac{h^2}{2\pi mk}\right) \left(\frac{N}{V\zeta(3/2)}\right)^{2/3}
+    \]
+    \item Fraction in Ground State for Bose-Einstein Condensation:
+    \[
+    \frac{N_0}{N} = 1 - \left(\frac{T}{T_c}\right)^{3/2}
+    \]
+    \item Fermi Energy:
+    \[
+    E_F = \frac{h^2}{2m}\left(\frac{3N}{8\pi V}\right)^{2/3}
+    \]
+    }
+
+    \tipbox{
+    \textbf{Constants: }
+    \item Stefan-Boltzmann Law:
+    \[
+    P = \sigma T^4, \quad \sigma = 5.67\times10^{-8} \, \text{W/m}^2\cdot\text{K}^4
+    \]
+    \item Wien's Displacement Law:
+    \[
+    \lambda_{\text{max}} = \frac{b}{T}, \quad b \approx 2.897\times10^{-3} \, \text{m}\cdot\text{K}
+    \]
     }
 \end{itemize}
+
 
 \subsection{Mathematical Tools}
 \begin{itemize}
